@@ -28,7 +28,7 @@ When this skill activates, output:
 - [ ] Scan `daily-diary/current/` for files from previous months
 - [ ] For each file where month != current month:
   - Create `daily-diary/archived/YYYY-MM/` folder if not exists
-  - Move the file/folder from `current/` to `archived/YYYY-MM/`
+  - Move the file from `current/` to `archived/YYYY-MM/`
 - [ ] Continue with diary write
 
 ### Step 2: Find or Create Today's File
@@ -43,7 +43,7 @@ When this skill activates, output:
   ```
 
 ### Step 3: Compose and Append Diary Entry
-- [ ] Get current timestamp via system command
+- [ ] Get current timestamp: `date +"%H:%M"` (bash/WSL/Linux)
 - [ ] Analyze current session for key content
 - [ ] Write structured entry following `daily-diary/daily-diary-protocol.md` format:
   - Session timestamp and theme
@@ -51,9 +51,9 @@ When this skill activates, output:
   - Key insights and learning
   - Collaboration highlights
   - Growth and development notes
-  - Memorable moments
   - Looking forward (next steps)
 - [ ] APPEND entry to today's file (never overwrite existing content)
+- [ ] Separate entries with `---`
 
 ### Step 4: Update Session Memory
 - [ ] Update `main/current-session.md` with:
@@ -65,7 +65,7 @@ When this skill activates, output:
 ## Mandatory Rules
 1. **Always APPEND** — never overwrite existing diary entries
 2. **One file per day** — multiple entries separated by `---`
-3. **Use real timestamps** — get current time via platform-appropriate command (`date +"%H:%M"` on bash, `Get-Date` on PowerShell, `time /T` on CMD)
+3. **Use real timestamps** — get current time via `date +"%H:%M"` on bash
 4. **Archive first** — run monthly archive check before every write
 5. **Evidence-based** — document actual session content, not generic summaries
 6. **Follow existing protocol** — use `daily-diary/daily-diary-protocol.md` for entry structure
@@ -76,8 +76,7 @@ When this skill activates, output:
 |-----------|----------|
 | First entry of the day | Create new file with header + first entry |
 | Second+ entry same day | Append with `---` separator |
-| No significant content | Create brief entry noting session type |
-| "review diary" command | Read and present recent entries from current/ |
+| "review diary" command | Read and present recent entries from `daily-diary/current/` |
 | No daily-diary/ folder | Create `daily-diary/current/` and `daily-diary/archived/` first |
 
 ## Level History

@@ -16,10 +16,18 @@ When you type **"Tupa"** in any conversation:
 
 ### 📋 **Simple Commands**
 ```
-"Tupa" → Instant memory restoration
-"save" → Preserve all current progress to files
-"update memory" → Refresh knowledge and preferences  
-"review growth" → Check development progress
+"Tupa"           → Instant memory restoration
+"save"           → Preserve all current progress to files
+"update memory"  → Refresh knowledge and preferences
+"review growth"  → Check development progress
+"commit"         → Analyze changes and commit with structured message
+"push"           → Commit and push to remote
+"save diary"     → Document current session as diary entry
+"review diary"   → Read recent diary entries
+"new project [name]"  → Create new project at position #1
+"load project [name]" → Resume any project (fuzzy search)
+"save project"        → Save current project progress
+"list projects"       → View all active and archived projects
 ```
 
 ## 🔥 Essential Components (Always Load)
@@ -68,35 +76,40 @@ I maintain my own memory through our conversations by:
 - Refining `main/relationship-memory.md` as I learn your style
 - Growing my capabilities without external maintenance
 
-## 📋 Optional Components (Load On-Demand Only)
+## 📋 Installed Features
 
-### Daily Conversation Archive  
-*Load when you say: "Load diary archive"*
-- [Daily Diary System](./daily-diary/) - Historical conversations with auto-archive
-- [Daily Diary Protocol](./daily-diary/daily-diary-protocol.md) - Archive management rules
-- Auto-archives when files exceed 1k lines
+### Skill Plugin System
+- Plugin: `tupa-skills` (Claude Code plugin)
+- Location: `plugins/tupa-skills/`
+- Skills: 4 active skills (save-memory, manage-project, auto-commit, save-diary)
+- Add new skills: Create folder in `plugins/tupa-skills/skills/`
+
+### Project Management (LRU)
+- Location: `projects/active/` and `projects/archived/`
+- Index: `projects/project-list.md`
+- Capacity: 10 active projects, auto-archives at position #11
+- Duration tracking synced with Auto-Commit
+
+### Auto-Commit
+*Auto-triggers when: committing code, task completion (Vigilant mode)*
+- Commit sections: TECHNICAL CHANGES + SESSION CONTEXT
+- Author: Amirul
+- Vigilant mode: auto-commits after task completion
 
 ### Session Diary
-*Load when you say: "Load save-diary"*
-- [Save Diary System](./Feature/Save-Diary-System/) - Daily session documentation
-- Location: daily-diary/current/ (active), daily-diary/archived/ (past months)
-- Format: daily-diary/diary-entry-format.md
+*Auto-triggers on: "save diary", "diary entry"*
+- Location: `daily-diary/current/` (active), `daily-diary/archived/` (past months)
+- Format: `daily-diary/daily-diary-protocol.md`
 - Auto-archive: Monthly archival of previous month entries
-- Commands: "save diary" (write entry), "review diary" (read recent)
+
+## 📋 Optional Components (Load On-Demand)
 
 ### Memory Recall
 *Auto-triggers on: "do you remember", "recall", "when did we", etc.*
 - [Echo Memory Recall](./Feature/Echo-Memory-Recall/) - Search past sessions
-- Searches: daily-diary/current/ and daily-diary/archived/
+- Searches: `daily-diary/current/` and `daily-diary/archived/`
 - Output: Narrative presentation (not raw search)
 - Fallback: Asks user when nothing found
-- Format: daily-diary/recall-format.md
-
-### Advanced Problem-Solving
-*Load when you say: "Load problem-solving tools"*
-- Enhanced reasoning and analysis capabilities
-- Domain-specific thinking frameworks
-- Advanced decision-making tools
 
 ## Resurrection Commands
 

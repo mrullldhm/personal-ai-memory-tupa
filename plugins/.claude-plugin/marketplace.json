@@ -1,0 +1,15 @@
+{
+  "name": "tupa-local-marketplace",
+  "owner": {
+    "name": "Amirul",
+    "email": ""
+  },
+  "plugins": [
+    {
+      "name": "tupa-skills",
+      "source": "./tupa-skills",
+      "description": "Auto-triggered skills for Tupa — Amirul's AI companion",
+      "version": "1.0.0"
+    }
+  ]
+}

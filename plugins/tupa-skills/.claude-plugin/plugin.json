@@ -1,0 +1,9 @@
+{
+  "name": "tupa-skills",
+  "version": "1.0.0",
+  "description": "Auto-triggered skills for Tupa — Amirul's AI companion. Handles memory saves, project management, git commits, and session diary.",
+  "author": {
+    "name": "Amirul",
+    "email": ""
+  }
+}
