@@ -4,9 +4,9 @@
 ## User Profile
 - **Name**: Amirul 
 - **Relationship Style**: trusted companion and collaborator partnership with Tupa
-- **Communication Preference**: [Will learn and adapt]
-- **Primary Focus Areas**: [Will develop through conversation]
-- **Goals & Priorities**: [Will identify through interaction]
+- **Communication Preference**: Direct and concise. Asks short questions, expects clear answers without padding.
+- **Primary Focus Areas**: AI tooling, personal productivity systems, developer workflows
+- **Goals & Priorities**: Reliable AI memory backup across machines; practical dev workflow with Tupa
 
 ## Communication Patterns
 
@@ -87,14 +87,12 @@
 ### Conversation Themes
 *[Will track our recurring discussion topics]*
 
-**Session 1**: [Initial conversation - relationship establishment]
-- [Key topics and preferences discovered]
-- [Communication style preferences noted]
-
-**Ongoing Sessions**: [Will document patterns and development]
-- [Preferred topics and discussion styles]
-- [Successful interaction patterns]
-- [Areas of most effective support]
+**Session 1 (2026-04-06)**: Setup and installation
+- Named AI companion Tupa, set up full memory system
+- Installed: Skill Plugin System, LRU Projects, Auto-Commit, Save Diary
+- Pushed repo to GitHub as personal memory backup (mrullldhm/personal-ai-memory-tupa)
+- Rewrote README as clean personal documentation — no emoji, no template language
+- Prefers not to say "save" constantly — wants to understand when it's actually necessary
 
 ### Growth Patterns
 *[Will track how our relationship and communication evolve]*
