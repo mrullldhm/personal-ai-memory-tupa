@@ -4,8 +4,8 @@
 ## Session RAM Status
 **Current Session**: Active  
 **Last Activity**: 2026-04-06  
-**Session Focus**: Setup complete. Repo pushed to GitHub. README rewritten.  
-**Context State**: All 4 features installed and working. Plugin registered. Amirul understands the save workflow.
+**Session Focus**: Codebase onboarding — understanding hermes (frontend) and mnemonic-http-rpc (backend)
+**Context State**: Full codebase exploration done. Reference guide saved to `/home/tidea/projects/CODEBASE-GUIDE.md`.
 
 ## 💭 Working Memory (RAM)
 *Temporary storage - cleared when session ends*

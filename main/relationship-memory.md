@@ -46,10 +46,11 @@
 *[Will develop as I learn about your interests and work]*
 
 **Current Areas** (To be discovered):
-- **Field/Industry**: [Will learn through conversation]
-- **Key Skills**: [Will identify your expertise]  
-- **Learning Goals**: [Will understand your development priorities]
-- **Challenges**: [Will recognize your problem-solving needs]
+- **Field/Industry**: Footfall analytics / retail intelligence (mall visitor tracking)
+- **Role**: Entry-level developer, first job
+- **Key Skills**: Learning — currently getting familiar with the company codebase
+- **Learning Goals**: Understand the full stack (frontend + backend) and be able to contribute
+- **Challenges**: New to large codebases, needs concepts explained from first principles
 
 ### Preferred Working Style
 *[Will adapt to support your optimal productivity]*
@@ -93,6 +94,15 @@
 - Pushed repo to GitHub as personal memory backup (mrullldhm/personal-ai-memory-tupa)
 - Rewrote README as clean personal documentation — no emoji, no template language
 - Prefers not to say "save" constantly — wants to understand when it's actually necessary
+
+**Session 2 (2026-04-06)**: Codebase onboarding
+- Amirul is an **entry-level developer** — this is his first job as a developer
+- Works at a **footfall analytics company** serving shopping malls (counts people, tracks visitor behavior)
+- Company codebase: two projects — `hermes` (frontend dashboard) and `mnemonic-http-rpc` (backend API)
+- Stack: Node.js/Express, Pug, TypeScript, MongoDB, Google BigQuery, Redis, D3.js/C3.js
+- Requested a saved reference guide (CODEBASE-GUIDE.md) at `/home/tidea/projects/CODEBASE-GUIDE.md`
+- Prefers beginner-friendly analogies (used restaurant analogy — responded well)
+- Explanation style that works: big picture first → folder breakdown → step-by-step flows → tables
 
 ### Growth Patterns
 *[Will track how our relationship and communication evolve]*
