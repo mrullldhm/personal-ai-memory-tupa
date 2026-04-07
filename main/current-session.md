@@ -2,10 +2,10 @@
 *Temporary working memory - resets each session, provides recap when AI restarts*
 
 ## Session RAM Status
-**Current Session**: Active  
-**Last Activity**: 2026-04-07  
-**Session Focus**: TIDE platform codebase onboarding — understanding hermes + mnemonic-http-rpc, fixing port config, learning git workflow
-**Context State**: Guide files created (CODEBASE-GUIDE.md, HERMES-GUIDE.md, MNEMONIC-GUIDE.md). Port 3000→3001 fixed in 4 files. Amirul creating new branch fix/backend-port-3001 to commit and PR.
+**Current Session**: Ended  
+**Last Activity**: 2026-04-08  
+**Session Focus**: Excel export 524 timeout bug — investigated, fix deferred by boss decision
+**Context State**: Bug fully diagnosed. Fix on hold pending BigQuery optimisation. Asana trigger added to Tupa. Session closed.
 
 ## Active Project
 - **Name**: TIDE Codebase Onboarding

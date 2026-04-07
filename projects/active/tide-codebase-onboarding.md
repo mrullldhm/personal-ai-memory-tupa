@@ -5,15 +5,29 @@
 - **Type**: Onboarding / Documentation
 - **Period**: 2026-04-06 - Active
 - **Tech Stack**: Hermes (Express/Pug) + mnemonic-http-rpc (TypeScript/Express) + MongoDB + BigQuery + Redis
-- **Completion**: 30%
-- **Duration**: ~90 min
+- **Completion**: 40%
+- **Duration**: ~150 min
 
 ## Current Status
-- **Last Session**: 2026-04-07 - Port fix + git workflow intro
-- **Next Steps**: Start reading the learning roadmap files (app.js → config → express → controllers). Try running both repos locally.
+- **Last Session**: 2026-04-08 - Excel export fix deferred + Asana trigger added
+- **Next Steps**: Excel export fix is ON HOLD — resume only after BigQuery lazy load / query time is optimised by the team
 - **Known Issues**: AWS ECR credentials needed for full Docker setup — use Option B (pnpm dev) instead.
 
 ## Session History (Last 5)
+
+### 2026-04-08 - Excel export fix deferred + Asana trigger setup
+- **Decision**: Boss confirmed fix is on hold — BigQuery uses lazy load, parallel approach would add extra load
+- **Added**: "Asana" trigger to Tupa — generates a plain-English Asana task title + description from session work
+- **Skill Created**: `plugins/tupa-skills/skills/asana-report/SKILL.md`
+- **Time Spent**: ~15 min
+
+### 2026-04-07 - Excel export 524 timeout bug investigation
+- **Bug**: POST /export/all/summary returns 524 (Cloudflare timeout) for large orgs. Small orgs work fine.
+- **Root Cause**: `async.waterfall` in `hermes/app/controllers/export.js` fetches branches sequentially. Each BigQuery call ~5–15s. 10+ branches = 100s+ → exceeds Cloudflare's 100s limit.
+- **Fix Planned**: Replace waterfall with `async.map` (parallel) for `/all/summary`. Use `async.mapLimit(items, 5, ...)` for `/all/daily`.
+- **Fix Status**: ON HOLD — boss decision. BigQuery uses lazy load; parallel approach would add extra load. Resume fix only after BigQuery query time is optimised.
+- **Key Files**: `hermes/app/controllers/export.js` (lines 181–353), `hermes/app/helpers/excels.js`, `excel-export@0.5.1`
+- **Time Spent**: ~45 min
 
 ### 2026-04-07 - Port fix + git workflow
 - **Changes**: Fixed APP_PORT 3000 → 3001 in `src/config/config.js`, `docker-compose.yml`, `Dockerfile`
@@ -41,4 +55,4 @@
 - **Key Config**: Backend API Key = `mnemonic-http-rpc-dev-secret-api-key`
 
 ---
-**Last Updated**: 2026-04-07 | **Position**: #1/10 Active
+**Last Updated**: 2026-04-08 (session 4) | **Position**: #1/10 Active

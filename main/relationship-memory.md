@@ -121,6 +121,14 @@
 - Use `database-dump-dev` for login/basic testing; `database-dump` for real analytics data
 - Verified via MongoDB Compass at `mongodb://localhost:27017`, database: `mnemonic-http-rpc-development`
 
+**Session 6 (2026-04-08)**: Excel export 524 timeout bug — investigated and deferred
+- Diagnosed 524 Cloudflare timeout on POST /export/all/summary for large orgs
+- Root cause: async.waterfall in export.js fetches BigQuery data per branch sequentially
+- Parallel fix (async.map) was planned but rejected by boss — BigQuery uses lazy load, parallel adds extra load
+- Decision: put on hold until BigQuery query time is optimised by the team
+- Prefers Asana task updates in plain English — no technical jargon, short description a non-developer can read
+- Added "Asana" trigger to Tupa — says "Asana" to get a formatted Asana task title + description from session work
+
 **Session 5 (2026-04-07)**: PDFGenerator service discovered and documented
 - Amirul cloned the `pdfgenerator` repo → confirmed it's the correct service Hermes uses for PDF export
 - Architecture is now **3 services**: hermes (:3000) → mnemonic-http-rpc (:3001) → pdfgenerator (:3003)
