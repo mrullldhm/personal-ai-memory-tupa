@@ -121,6 +121,16 @@
 - Use `database-dump-dev` for login/basic testing; `database-dump` for real analytics data
 - Verified via MongoDB Compass at `mongodb://localhost:27017`, database: `mnemonic-http-rpc-development`
 
+**Session 5 (2026-04-07)**: PDFGenerator service discovered and documented
+- Amirul cloned the `pdfgenerator` repo → confirmed it's the correct service Hermes uses for PDF export
+- Architecture is now **3 services**: hermes (:3000) → mnemonic-http-rpc (:3001) → pdfgenerator (:3003)
+- pdfgenerator: tiny Express app, uses Puppeteer + headless Chrome, exposes `POST /pdf`, accepts `{ html }`, returns binary PDF
+- Hermes config links: `PDF_URL` → pdfgenerator URL, `PDF_API_KEY` → must match `AUTH_TOKEN` in pdfgenerator
+- Chrome is NOT installed on the system (`/snap/bin/chromium` not found) — Docker is the recommended local run path (`docker compose up --build`)
+- For local dev: set `PDF_URL=http://localhost:3003/pdf` and `PDF_API_KEY=local-dev-token` in `hermes/.env`
+- Created `PDFGENERATOR-GUIDE.md` at `/home/tidea/projects/`
+- Updated `CODEBASE-GUIDE.md` to reflect 3-service architecture (architecture diagram, Project 3 section, ports, restaurant analogy, dual request lifecycle)
+
 ### Growth Patterns
 *[Will track how our relationship and communication evolve]*
 

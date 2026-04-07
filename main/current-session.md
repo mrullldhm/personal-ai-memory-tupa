@@ -4,8 +4,8 @@
 ## Session RAM Status
 **Current Session**: Active  
 **Last Activity**: 2026-04-07  
-**Session Focus**: Local dev environment setup — getting first login working on hermes
-**Context State**: Login working. MongoDB seeded with test org + user. Dev workflow documented.
+**Session Focus**: PDFGenerator service — discovery, local run workflow, documentation
+**Context State**: All 3 services documented. PDFGENERATOR-GUIDE.md created. CODEBASE-GUIDE.md updated. Chrome not installed — Docker recommended for pdfgenerator locally.
 
 ## 💭 Working Memory (RAM)
 *Temporary storage - cleared when session ends*
