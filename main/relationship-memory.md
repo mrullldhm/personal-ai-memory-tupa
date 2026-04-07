@@ -130,6 +130,7 @@
 - For local dev: set `PDF_URL=http://localhost:3003/pdf` and `PDF_API_KEY=local-dev-token` in `hermes/.env`
 - Created `PDFGENERATOR-GUIDE.md` at `/home/tidea/projects/`
 - Updated `CODEBASE-GUIDE.md` to reflect 3-service architecture (architecture diagram, Project 3 section, ports, restaurant analogy, dual request lifecycle)
+- **Doc style preference confirmed**: Amirul preferred Option A / Option B format over numbered step-by-step workflow — reverted the guide back to the original structure after seeing the rewrite
 
 ### Growth Patterns
 *[Will track how our relationship and communication evolve]*

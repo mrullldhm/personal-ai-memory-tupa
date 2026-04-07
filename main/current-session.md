@@ -4,8 +4,14 @@
 ## Session RAM Status
 **Current Session**: Active  
 **Last Activity**: 2026-04-07  
-**Session Focus**: PDFGenerator service — discovery, local run workflow, documentation
-**Context State**: All 3 services documented. PDFGENERATOR-GUIDE.md created. CODEBASE-GUIDE.md updated. Chrome not installed — Docker recommended for pdfgenerator locally.
+**Session Focus**: TIDE platform codebase onboarding — understanding hermes + mnemonic-http-rpc, fixing port config, learning git workflow
+**Context State**: Guide files created (CODEBASE-GUIDE.md, HERMES-GUIDE.md, MNEMONIC-GUIDE.md). Port 3000→3001 fixed in 4 files. Amirul creating new branch fix/backend-port-3001 to commit and PR.
+
+## Active Project
+- **Name**: TIDE Codebase Onboarding
+- **File**: projects/active/tide-codebase-onboarding.md
+- **Started**: 2026-04-06
+- **Context**: Entry-level dev onboarding to the TIDE Analytics platform (hermes frontend + mnemonic-http-rpc backend)
 
 ## 💭 Working Memory (RAM)
 *Temporary storage - cleared when session ends*
