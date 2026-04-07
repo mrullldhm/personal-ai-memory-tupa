@@ -114,6 +114,13 @@
 - Documented both run options in `CODEBASE-GUIDE.md` and `mnemonic-http-rpc/README.md`
 - Learning style confirmed: wants to understand the *why*, not just be given the answer ("don't silver spoon me")
 
+**Session 4 (2026-04-07)**: Proper DB restore via mongorestore
+- Upgraded from manual Postman seeding → proper `mongorestore` workflow
+- Steps: `docker compose down` → `docker compose up cache database` → `docker cp` dump files into container → `mongorestore`
+- Two dump folders exist at `/home/tidea/projects/`: `database-dump-dev` (users + orgs only, lightweight) and `database-dump` (full collections: devices, visits, campaigns, travels, dailies, etc.)
+- Use `database-dump-dev` for login/basic testing; `database-dump` for real analytics data
+- Verified via MongoDB Compass at `mongodb://localhost:27017`, database: `mnemonic-http-rpc-development`
+
 ### Growth Patterns
 *[Will track how our relationship and communication evolve]*
 
