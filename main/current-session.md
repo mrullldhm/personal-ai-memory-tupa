@@ -3,9 +3,9 @@
 
 ## Session RAM Status
 **Current Session**: Active  
-**Last Activity**: 2026-04-06  
-**Session Focus**: Codebase onboarding — understanding hermes (frontend) and mnemonic-http-rpc (backend)
-**Context State**: Full codebase exploration done. Reference guide saved to `/home/tidea/projects/CODEBASE-GUIDE.md`.
+**Last Activity**: 2026-04-07  
+**Session Focus**: Local dev environment setup — getting first login working on hermes
+**Context State**: Login working. MongoDB seeded with test org + user. Dev workflow documented.
 
 ## 💭 Working Memory (RAM)
 *Temporary storage - cleared when session ends*

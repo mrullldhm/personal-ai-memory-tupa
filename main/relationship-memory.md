@@ -104,6 +104,16 @@
 - Prefers beginner-friendly analogies (used restaurant analogy — responded well)
 - Explanation style that works: big picture first → folder breakdown → step-by-step flows → tables
 
+**Session 3 (2026-04-07)**: Local dev setup — first login
+- Learned that `docker-compose up` fails without AWS ECR credentials (private image registry)
+- Correct local dev workflow: `docker-compose up -d database cache` (infra only) + `pnpm run dev` (backend from source)
+- MongoDB starts empty — must seed Organization and User manually via Postman before login works
+- Postman endpoint for user/org creation: `POST http://localhost:3001/api/v1/{user|organization}` with `Api-Key` header
+- Key gotcha: User's `organization` field stores the org **name** (`n`), not `_id` — org lookup uses `findOne({n: name})`
+- Successfully logged in after creating org + user and linking them
+- Documented both run options in `CODEBASE-GUIDE.md` and `mnemonic-http-rpc/README.md`
+- Learning style confirmed: wants to understand the *why*, not just be given the answer ("don't silver spoon me")
+
 ### Growth Patterns
 *[Will track how our relationship and communication evolve]*
 
