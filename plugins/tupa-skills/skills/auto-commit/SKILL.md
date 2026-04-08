@@ -100,11 +100,13 @@ After completing ANY task, the AI automatically:
 
 1. **No emoji in commit messages** — git commit body must be clean text only
 2. **Author is always the human user** — commits appear under Amirul's name, not Tupa's
-3. **Prefer specific file staging** — use `git add [filename]` not `git add -A`
-4. **No SESSION CONTEXT or === sections** — use Conventional Commits format only
-5. **Warn on sensitive files** — if `.env`, credentials, or API keys are staged, warn and exclude
-6. **Never auto-push** — pushing is always explicit. Commits are local until user decides to push
-7. **Follow recent commit style** — check `git log` to maintain consistency
+3. **No Co-Authored-By lines** — never add `Co-Authored-By: Claude` or any AI attribution in commit messages
+4. **Only commit current session changes** — only stage and commit files that were changed in the current session. If `git diff` shows changes from previous sessions, leave them unstaged
+5. **Prefer specific file staging** — use `git add [filename]` not `git add -A`
+6. **No SESSION CONTEXT or === sections** — use Conventional Commits format only
+7. **Warn on sensitive files** — if `.env`, credentials, or API keys are staged, warn and exclude
+8. **Never auto-push** — pushing is always explicit. Commits are local until user decides to push
+9. **Follow recent commit style** — check `git log` to maintain consistency
 
 ## Edge Cases
 
