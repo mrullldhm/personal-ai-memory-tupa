@@ -2,10 +2,19 @@
 *Temporary working memory - resets each session, provides recap when AI restarts*
 
 ## Session RAM Status
-**Current Session**: Ended  
-**Last Activity**: 2026-04-08  
-**Session Focus**: hermes export format migration — xlsx → CSV
-**Context State**: Completed. All 3 export endpoints (`/all/summary`, `/all/daily`, `/location/hourly`) in `hermes/app/controllers/export.js` now generate CSV instead of xlsx. Added `toCsv()` helper to `hermes/app/helpers/excels.js`. `excel-export` library removed from import. Amirul also did a full data flow deep-dive (BigQuery → mnemonic-http-rpc → hermes). Session closed — Amirul to compare xlsx vs csv output with Z next.
+**Current Session**: Closed — session ended by Amirul  
+**Last Activity**: 2026-04-08 ~18:23  
+**Session Focus**: Export format redesign — new column layout for all 3 export types per Z's request
+
+**Session Recap (for next restart)**:
+- Sessions today: 5 total (bug investigation, git branching, BigQuery exploration, CSV migration, SQL redesign)
+- Final session: Created `export-daily.sql`, `export-summary.sql`, `export-hourly.sql` per Z's new column spec
+- Data sources: `emerald.analytics_daily` and `emerald.analytics_hourly` (pre-aggregated BigQuery tables)
+- Key gotcha: `AS new` / `AS returning` are BigQuery reserved words — renamed to `new_count`, `returning_count`
+- Key lesson: `tsc --watch` does NOT copy `.sql` files to `dist/sqls/` — must copy manually or use `pnpm build`
+- Ratios stored as 4-decimal raw values; client converts to % by multiplying by 100
+- `stay_p50` = median stay time in minutes
+- Pending when resuming: Asana update for session 9 work
 
 ## Active Project
 - **Name**: TIDE Codebase Onboarding

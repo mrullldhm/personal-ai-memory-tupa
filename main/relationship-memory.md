@@ -121,6 +121,17 @@
 - Use `database-dump-dev` for login/basic testing; `database-dump` for real analytics data
 - Verified via MongoDB Compass at `mongodb://localhost:27017`, database: `mnemonic-http-rpc-development`
 
+**Session 9 (2026-04-08)**: Export format redesign — new CSV column layout
+- Z assigned a new export format for all 3 export types (summary, daily, hourly)
+- Replaced the old 4-query-per-branch approach with a single SQL file per export type
+- All data comes from `emerald.analytics_daily` and `emerald.analytics_hourly` (pre-aggregated BigQuery tables)
+- New columns include device ratios (top 5 manufacturers), OS ratios (iOS/Android/Other), staytime
+- Ratios stored as 4 decimal raw values — client multiplies by 100 for percentage
+- Learned: BigQuery rejects `AS new` and `AS returning` — both are reserved keywords
+- Learned: `tsc --watch` does not copy `.sql` files to `dist/sqls/` — must do it manually after every SQL change
+- `stay_p50` is median stay time in minutes (50th percentile from analytics tables)
+- Session still active — Asana update pending
+
 **Session 8 (2026-04-08)**: BigQuery exploration — emerald dataset
 - Boss Z assigned Amirul to study BigQuery, specifically `emerald.analytics_daily` and `emerald.analytics_hourly`
 - Learned BigQuery UI hierarchy: GCP Project → Dataset → Table
