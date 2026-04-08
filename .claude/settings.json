@@ -1,19 +1,2 @@
 {
-  "hooks": {
-    "PostToolUse": [
-      {
-        "matcher": "Write|Edit|NotebookEdit",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "cd /home/tidea/tools/Project-AI-MemoryCore && git diff --quiet HEAD 2>/dev/null || (git add -A && git commit -m 'auto-save') 2>/dev/null; git push 2>/dev/null || true",
-            "timeout": 30,
-            "statusMessage": "Pushing to remote...",
-            "async": true
-
-          }
-        ]
-      }
-    ]
-  }
 }
