@@ -1,3 +1,8 @@
+---
+name: asana-report
+description: "MUST use when user says 'Asana' or 'asana report'. Generates a plain-English Asana task title and description based on the current session's work."
+---
+
 # Asana Report Skill
 *Generates a simple Asana task entry based on today's session work.*
 
