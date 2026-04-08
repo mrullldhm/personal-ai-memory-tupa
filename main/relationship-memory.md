@@ -121,6 +121,15 @@
 - Use `database-dump-dev` for login/basic testing; `database-dump` for real analytics data
 - Verified via MongoDB Compass at `mongodb://localhost:27017`, database: `mnemonic-http-rpc-development`
 
+**Session 7 (2026-04-08)**: Git branching workflow — development branch setup
+- Boss Z introduced Main→Development→Feature branching strategy (simplified Git Flow)
+- Created `development` branch on `mnemonic-http-rpc` locally and pushed to GitHub
+- Discovered `auth/credentials.json` (GCP service account private key) was being tracked by git — fixed .gitignore and untracked it
+- Updated MNEMONIC-GUIDE.md and README.md to document that credentials.json is not in git, must be obtained from team lead
+- `hermes` and `pdfgenerator` development branches not yet created (deferred to next session)
+- Key learning moment: almost created a PR merging development→main by accident — clarified PR vs commit merge
+- Prefers clean commit messages — no "Co-authored-by: Claude" going forward
+
 **Session 6 (2026-04-08)**: Excel export 524 timeout bug — investigated and deferred
 - Diagnosed 524 Cloudflare timeout on POST /export/all/summary for large orgs
 - Root cause: async.waterfall in export.js fetches BigQuery data per branch sequentially

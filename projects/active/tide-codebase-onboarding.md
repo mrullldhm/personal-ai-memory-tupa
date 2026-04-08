@@ -5,15 +5,22 @@
 - **Type**: Onboarding / Documentation
 - **Period**: 2026-04-06 - Active
 - **Tech Stack**: Hermes (Express/Pug) + mnemonic-http-rpc (TypeScript/Express) + MongoDB + BigQuery + Redis
-- **Completion**: 40%
-- **Duration**: ~150 min
+- **Completion**: 45%
+- **Duration**: ~180 min
 
 ## Current Status
-- **Last Session**: 2026-04-08 - Excel export fix deferred + Asana trigger added
-- **Next Steps**: Excel export fix is ON HOLD — resume only after BigQuery lazy load / query time is optimised by the team
+- **Last Session**: 2026-04-08 - Git branching workflow setup + credentials security fix
+- **Next Steps**: Create `development` branch for `hermes` and `pdfgenerator` (not done yet). Then start feature branch workflow for new tasks.
 - **Known Issues**: AWS ECR credentials needed for full Docker setup — use Option B (pnpm dev) instead.
 
 ## Session History (Last 5)
+
+### 2026-04-08 - Git branching + credentials security fix
+- **Set up**: `development` branch on `mnemonic-http-rpc` — pushed to GitHub
+- **Security fix**: `auth/credentials.json` was tracked by git due to broken `.gitignore` line — fixed and untracked
+- **Docs updated**: `MNEMONIC-GUIDE.md` and `README.md` now document credentials must be obtained manually
+- **Pending**: `hermes` and `pdfgenerator` development branches not yet created
+- **Time Spent**: ~30 min
 
 ### 2026-04-08 - Excel export fix deferred + Asana trigger setup
 - **Decision**: Boss confirmed fix is on hold — BigQuery uses lazy load, parallel approach would add extra load
@@ -55,4 +62,4 @@
 - **Key Config**: Backend API Key = `mnemonic-http-rpc-dev-secret-api-key`
 
 ---
-**Last Updated**: 2026-04-08 (session 4) | **Position**: #1/10 Active
+**Last Updated**: 2026-04-08 (session 7) | **Position**: #1/10 Active

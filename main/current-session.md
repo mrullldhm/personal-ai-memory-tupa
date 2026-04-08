@@ -4,8 +4,8 @@
 ## Session RAM Status
 **Current Session**: Ended  
 **Last Activity**: 2026-04-08  
-**Session Focus**: Excel export 524 timeout bug — investigated, fix deferred by boss decision
-**Context State**: Bug fully diagnosed. Fix on hold pending BigQuery optimisation. Asana trigger added to Tupa. Session closed.
+**Session Focus**: Git branching workflow setup — development branch, credentials security fix
+**Context State**: `development` branch live on GitHub for mnemonic-http-rpc. `auth/credentials.json` untracked and gitignore fixed. hermes and pdfgenerator development branches not yet created. Session closed.
 
 ## Active Project
 - **Name**: TIDE Codebase Onboarding
