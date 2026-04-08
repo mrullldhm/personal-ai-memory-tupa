@@ -9,11 +9,19 @@
 - **Duration**: ~180 min
 
 ## Current Status
-- **Last Session**: 2026-04-08 - Git branching workflow setup + credentials security fix
-- **Next Steps**: Create `development` branch for `hermes` and `pdfgenerator` (not done yet). Then start feature branch workflow for new tasks.
+- **Last Session**: 2026-04-08 - BigQuery exploration — emerald dataset schema study
+- **Next Steps**: Create `development` branch for `hermes` and `pdfgenerator` (still pending). Begin deeper BigQuery work as assigned by Z.
 - **Known Issues**: AWS ECR credentials needed for full Docker setup — use Option B (pnpm dev) instead.
 
 ## Session History (Last 5)
+
+### 2026-04-08 - BigQuery exploration — emerald dataset
+- **Explored**: BigQuery Studio UI layout (project → dataset → table hierarchy)
+- **Studied**: `emerald.analytics_daily` and `emerald.analytics_hourly` schemas
+- **Key insight**: Both tables track foot traffic per location. `analytics_daily` = one row per (origin × day), includes device/manufacturer breakdown. `analytics_hourly` = one row per (origin × day × hour), ~24x more rows, no device breakdown
+- **Assigned by**: Boss Z — told Amirul to focus on these two tables
+- **No code changes** — purely educational session
+- **Time Spent**: ~30 min
 
 ### 2026-04-08 - Git branching + credentials security fix
 - **Set up**: `development` branch on `mnemonic-http-rpc` — pushed to GitHub

@@ -46,22 +46,24 @@ Then execute the commit protocol automatically.
 - [ ] Estimate time spent based on session context
 
 ### Step 2: Draft Commit Message
-- [ ] Apply the configured commit format:
+- [ ] Apply the Conventional Commits format:
 
   ```
-  [Achievement Title] - [Brief technical summary]
+  <type>: <short summary in present tense, lowercase>
 
-  === TECHNICAL CHANGES ===
-  • [File/Component]: [Specific change description]
-  • [File/Component]: [Specific change description]
-
-  === SESSION CONTEXT ===
-  • Project: [name] | Type: [type] | Time: ~XX min
-  • [Additional context]
+  <optional body — what changed and why, plain sentences, no sections or separators>
   ```
 
-- [ ] For trivial changes: use Minimal format (one-liner, no sections)
-- [ ] For incomplete work: use WIP format with `WIP:` prefix
+  Types:
+  - `feat:` — new feature or behaviour
+  - `fix:` — bug fix
+  - `refactor:` — code restructure, no behaviour change
+  - `chore:` — tooling, config, dependencies
+  - `docs:` — documentation only
+
+- [ ] Subject line: max 72 characters, no period at the end
+- [ ] Body (optional): use only when the *why* needs explaining — plain sentences, no `===` sections, no bullet separators
+- [ ] For incomplete work: prefix with `WIP:` (e.g. `WIP: feat: add csv export`)
 
 ### Step 3: Execute Commit
 - [ ] Stage files by name: `git add [specific files]` (prefer named files over `git add -A`)
@@ -99,7 +101,7 @@ After completing ANY task, the AI automatically:
 1. **No emoji in commit messages** — git commit body must be clean text only
 2. **Author is always the human user** — commits appear under Amirul's name, not Tupa's
 3. **Prefer specific file staging** — use `git add [filename]` not `git add -A`
-4. **Time estimate required** — always include approximate time spent in SESSION CONTEXT
+4. **No SESSION CONTEXT or === sections** — use Conventional Commits format only
 5. **Warn on sensitive files** — if `.env`, credentials, or API keys are staged, warn and exclude
 6. **Never auto-push** — pushing is always explicit. Commits are local until user decides to push
 7. **Follow recent commit style** — check `git log` to maintain consistency
@@ -119,3 +121,4 @@ After completing ANY task, the AI automatically:
 - **Lv.1** — Base: Analyze staged changes, draft structured commit with TECHNICAL CHANGES + SESSION CONTEXT sections, enforce human authorship, no-emoji rule, time tracking, sensitive file detection.
 - **Lv.2** — Auto-Commit: Removed approval gate — AI analyzes, drafts, and commits in one seamless flow.
 - **Lv.3** — Vigilant: Proactive post-task detection — auto-checks git status after completing any task and commits if dirty. No work ever left behind.
+- **Lv.4** — Industry Standard: Switched to Conventional Commits format (`feat:`, `fix:`, `chore:`, etc.). Removed custom === sections and SESSION CONTEXT. Clean, professional commit messages suitable for team repos.

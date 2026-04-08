@@ -4,8 +4,8 @@
 ## Session RAM Status
 **Current Session**: Ended  
 **Last Activity**: 2026-04-08  
-**Session Focus**: Git branching workflow setup — development branch, credentials security fix
-**Context State**: `development` branch live on GitHub for mnemonic-http-rpc. `auth/credentials.json` untracked and gitignore fixed. hermes and pdfgenerator development branches not yet created. Session closed.
+**Session Focus**: hermes export format migration — xlsx → CSV
+**Context State**: Completed. All 3 export endpoints (`/all/summary`, `/all/daily`, `/location/hourly`) in `hermes/app/controllers/export.js` now generate CSV instead of xlsx. Added `toCsv()` helper to `hermes/app/helpers/excels.js`. `excel-export` library removed from import. Amirul also did a full data flow deep-dive (BigQuery → mnemonic-http-rpc → hermes). Session closed — Amirul to compare xlsx vs csv output with Z next.
 
 ## Active Project
 - **Name**: TIDE Codebase Onboarding

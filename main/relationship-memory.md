@@ -121,6 +121,12 @@
 - Use `database-dump-dev` for login/basic testing; `database-dump` for real analytics data
 - Verified via MongoDB Compass at `mongodb://localhost:27017`, database: `mnemonic-http-rpc-development`
 
+**Session 8 (2026-04-08)**: BigQuery exploration — emerald dataset
+- Boss Z assigned Amirul to study BigQuery, specifically `emerald.analytics_daily` and `emerald.analytics_hourly`
+- Learned BigQuery UI hierarchy: GCP Project → Dataset → Table
+- Understands the two-table pattern: daily (aggregated, has device breakdown) vs hourly (granular, no device data)
+- Session was purely conceptual — no code, no commits
+
 **Session 7 (2026-04-08)**: Git branching workflow — development branch setup
 - Boss Z introduced Main→Development→Feature branching strategy (simplified Git Flow)
 - Created `development` branch on `mnemonic-http-rpc` locally and pushed to GitHub
@@ -129,6 +135,7 @@
 - `hermes` and `pdfgenerator` development branches not yet created (deferred to next session)
 - Key learning moment: almost created a PR merging development→main by accident — clarified PR vs commit merge
 - Prefers clean commit messages — no "Co-authored-by: Claude" going forward
+- **Branching workflow clarified**: Amirul pushes directly to `development` (no PR needed — he manages it). Z only reviews PRs from `development → main`. Feature branches are not required for day-to-day work.
 
 **Session 6 (2026-04-08)**: Excel export 524 timeout bug — investigated and deferred
 - Diagnosed 524 Cloudflare timeout on POST /export/all/summary for large orgs

@@ -10,6 +10,7 @@
             "timeout": 30,
             "statusMessage": "Pushing to remote...",
             "async": true
+
           }
         ]
       }
