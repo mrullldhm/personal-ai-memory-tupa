@@ -9,11 +9,17 @@
 - **Duration**: ~195 min
 
 ## Current Status
-- **Last Session**: 2026-04-09 - Workflow & session hygiene setup (Tupa `done` command)
+- **Last Session**: 2026-04-09 - Auto-commit skill format fix (conventional commit enforcement)
 - **Next Steps**: Create `development` branch for `hermes` and `pdfgenerator` (still pending). Resume BigQuery work as assigned by Z. Post Asana update for Session 9 export redesign work.
 - **Known Issues**: AWS ECR credentials needed for full Docker setup — use Option B (pnpm dev) instead.
 
 ## Session History (Last 5)
+
+### 2026-04-09 - Auto-commit skill format fix
+- **Focus**: No code work — Tupa system fix
+- **Outcome**: Fixed `auto-commit/SKILL.md` to use standard conventional commit format; eliminated `=== TECHNICAL CHANGES ===` template
+- **Learned**: Soft memory reminders lose to hard skill instructions — fix must happen at the source file
+- **Time Spent**: ~10 min
 
 ### 2026-04-09 - Workflow & session hygiene setup
 - **Focus**: No code work — Tupa workflow session
@@ -67,4 +73,4 @@
 - **Key Config**: Backend API Key = `mnemonic-http-rpc-dev-secret-api-key`
 
 ---
-**Last Updated**: 2026-04-09 (session 10) | **Position**: #1/10 Active
+**Last Updated**: 2026-04-09 (session 11) | **Position**: #1/10 Active

@@ -121,6 +121,14 @@
 - Use `database-dump-dev` for login/basic testing; `database-dump` for real analytics data
 - Verified via MongoDB Compass at `mongodb://localhost:27017`, database: `mnemonic-http-rpc-development`
 
+**Session 11 (2026-04-09)**: Auto-commit skill format fix
+- Amirul rejected the `=== TECHNICAL CHANGES ===` commit format — had corrected this multiple times already
+- Root cause identified: the bad format was hardcoded in the SKILL.md file itself, overriding any memory note
+- Fixed SKILL.md directly — replaced the custom template with standard conventional commit format
+- Added explicit `NEVER` rule against section headers in the skill
+- Created memory/feedback_commit_style.md and MEMORY.md index as a second layer of defense
+- Key lesson: soft memory reminders lose to hard skill instructions — fix the source, not the symptom
+
 **Session 10 (2026-04-09)**: Workflow & session hygiene
 - Amirul asked for a proper workflow/procedure guide for using Tupa
 - Confirmed habit: does each different task in a different session — good practice, endorsed

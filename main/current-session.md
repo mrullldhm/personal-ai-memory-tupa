@@ -3,11 +3,12 @@
 
 ## Session RAM Status
 **Current Session**: No active session  
-**Last Session**: 2026-04-09 — Workflow & session hygiene setup  
+**Last Session**: 2026-04-09 — Auto-commit skill format fix  
 **Last Active Project**: TIDE Codebase Onboarding
 
 **Session Recap (for next restart)**:
-- Added `done` end-of-session command to CLAUDE.md — auto-runs save, save diary, save project, clear current-session.md
+- Fixed `auto-commit/SKILL.md` — replaced `=== TECHNICAL CHANGES ===` template with standard conventional commit format
+- Created `memory/feedback_commit_style.md` and `memory/MEMORY.md` as second-layer enforcement
 - Pending when resuming work: Asana update for Session 9 export redesign, `development` branches for `hermes` and `pdfgenerator`
 
 ## Active Project
