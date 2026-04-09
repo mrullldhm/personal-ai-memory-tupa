@@ -3,13 +3,14 @@
 
 ## Session RAM Status
 **Current Session**: No active session  
-**Last Session**: 2026-04-09 — Auto-commit skill format fix  
+**Last Session**: 2026-04-09 — Excel export origin/branch data flow exploration  
 **Last Active Project**: TIDE Codebase Onboarding
 
 **Session Recap (for next restart)**:
-- Fixed `auto-commit/SKILL.md` — replaced `=== TECHNICAL CHANGES ===` template with standard conventional commit format
-- Created `memory/feedback_commit_style.md` and `memory/MEMORY.md` as second-layer enforcement
-- Pending when resuming work: Asana update for Session 9 export redesign, `development` branches for `hermes` and `pdfgenerator`
+- Explored how branch name/code flows through the export: `branch.o` (MongoDB) → `analytics_daily.origin` (BigQuery) → `row.origin` in CSV
+- `analytics_daily.origin` format varies by org — zone codes or hardware sensor IDs — `branch.o` always matches
+- Export confirmed correct by Z — no changes needed
+- Pending: Asana update for Session 9 export redesign, `development` branches for `hermes` and `pdfgenerator`
 
 ## Active Project
 - **Name**: TIDE Codebase Onboarding

@@ -9,11 +9,17 @@
 - **Duration**: ~195 min
 
 ## Current Status
-- **Last Session**: 2026-04-09 - Auto-commit skill format fix (conventional commit enforcement)
-- **Next Steps**: Create `development` branch for `hermes` and `pdfgenerator` (still pending). Resume BigQuery work as assigned by Z. Post Asana update for Session 9 export redesign work.
+- **Last Session**: 2026-04-09 - Excel export origin/branch data flow exploration
+- **Next Steps**: Create `development` branch for `hermes` and `pdfgenerator` (still pending). Post Asana update for Session 9 export redesign work.
 - **Known Issues**: AWS ECR credentials needed for full Docker setup — use Option B (pnpm dev) instead.
 
 ## Session History (Last 5)
+
+### 2026-04-09 - Excel export origin/branch data flow
+- **Focus**: Understanding how branch name/code flows through the export pipeline
+- **Outcome**: Traced `branch.o` (MongoDB) → `analytics_daily.origin` (BigQuery) → `row.origin` (CSV). Confirmed export is correct. No code changes needed — verified with Z.
+- **Learned**: `analytics_daily.origin` format varies by org — some use zone codes (`sunway.ALL`), some use hardware sensor IDs (`E4956E444856`). Either way, `branch.o` always matches.
+- **Time Spent**: ~15 min
 
 ### 2026-04-09 - Auto-commit skill format fix
 - **Focus**: No code work — Tupa system fix
@@ -73,4 +79,4 @@
 - **Key Config**: Backend API Key = `mnemonic-http-rpc-dev-secret-api-key`
 
 ---
-**Last Updated**: 2026-04-09 (session 11) | **Position**: #1/10 Active
+**Last Updated**: 2026-04-09 (session 12) | **Position**: #1/10 Active

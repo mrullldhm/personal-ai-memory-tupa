@@ -121,6 +121,14 @@
 - Use `database-dump-dev` for login/basic testing; `database-dump` for real analytics data
 - Verified via MongoDB Compass at `mongodb://localhost:27017`, database: `mnemonic-http-rpc-development`
 
+**Session 12 (2026-04-09)**: Excel export — origin/branch deep dive
+- Investigated how branch name is known in the export: comes from `branch.l` in MongoDB session, NOT from BigQuery
+- `branch.o` in MongoDB = `origin` in `analytics_daily` BigQuery table — this is the direct link
+- `analytics_daily.origin` can be a zone code (e.g. `sunway.ALL`) OR a hardware sensor ID (e.g. `E4956E444856`) depending on the org
+- For Sunway Pyramid: each sensor hardware ID IS the origin — one row per sensor per day
+- Current export already correct: Origin column = `row.origin` (the code), Branch column = `branch.l` (the label)
+- Confirmed with Z — no changes needed
+
 **Session 11 (2026-04-09)**: Auto-commit skill format fix
 - Amirul rejected the `=== TECHNICAL CHANGES ===` commit format — had corrected this multiple times already
 - Root cause identified: the bad format was hardcoded in the SKILL.md file itself, overriding any memory note
