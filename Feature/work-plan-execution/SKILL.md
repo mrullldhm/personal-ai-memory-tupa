@@ -1,5 +1,5 @@
 ---
-name: work-plan
+name: work-plan-execution
 description: "MUST use when user says 'copy plan', 'append plan', 'resume plan',
              'load plan', 'start the plan', 'continue the plan', 'execute plan',
              'run the plan', 'pick up where we left off', or when the AI exits

@@ -29,6 +29,7 @@
 - Clean conventional commit format only: `type: short description`
 - NEVER add "Co-authored-by: Claude" or any AI authorship line
 - No `=== SECTION HEADERS ===` in commit messages
+- On "commit" or "push" → show manual workflow steps only, do NOT run git commands. Amirul does it manually.
 
 **Asana updates**
 - Plain English only, no technical jargon, short, non-developer readable
@@ -40,45 +41,9 @@
 
 ## Session History
 
-**Sessions 1-4 (2026-04-06/07)** — Setup & onboarding
-- Named Tupa, installed full memory system, pushed to GitHub (`mrullldhm/personal-ai-memory-tupa`)
-- Learned local dev workflow: `docker compose up -d database cache` + `pnpm run dev`
-- MongoDB seeding: `mongorestore` with `database-dump-dev` (lightweight) or `database-dump` (full)
-- Docs saved: `CODEBASE-GUIDE.md`, `mnemonic-http-rpc/README.md` at `/home/tidea/projects/`
-
-**Sessions 5-6 (2026-04-08)** — PDF service & Excel export
-- Documented pdfgenerator service — `PDFGENERATOR-GUIDE.md` saved
-- Excel export 524 timeout: root cause = sequential BigQuery fetch per branch in `async.waterfall`
-- Parallel fix rejected by boss Z (BigQuery lazy load concern) — on hold until query optimised
-- Added Asana trigger: say "Asana" → formatted Asana title + description from session
-
-**Sessions 7-8 (2026-04-08)** — Git workflow & BigQuery
-- Boss Z introduced Main→Development→Feature branching (simplified Git Flow)
-- `auth/credentials.json` was tracked by git — fixed `.gitignore`, untracked it
-- Amirul pushes direct to `development`. Z reviews PRs from `development → main`
-- BigQuery: `emerald.analytics_daily` (aggregated, device breakdown) vs `emerald.analytics_hourly` (granular, no device data)
-
-**Session 9 (2026-04-08)** — Export format redesign
-- Replaced 4-query-per-branch with single SQL file per export type
-- New columns: device ratios (top 5 manufacturers), OS ratios, staytime (`stay_p50` = median minutes)
-- Ratios as 4 decimal raw values — client multiplies by 100 for %
-- `tsc --watch` does NOT copy `.sql` files to `dist/sqls/` — must copy manually after SQL changes
-
-**Session 10 (2026-04-09)** — Workflow & session hygiene
-- Added `done` command to CLAUDE.md — triggers save + save diary + save project + clear current-session.md
-- current-session.md must be cleared: stale context bleeds into next sessions via Tupa load protocol
-
-**Session 11 (2026-04-09)** — Auto-commit skill format fix
-- Amirul rejected `=== TECHNICAL CHANGES ===` commit format — corrected multiple times already
-- Root cause: bad format hardcoded in SKILL.md, overriding memory notes
-- Fixed SKILL.md — replaced custom template with standard conventional commit format
-- Key lesson: soft memory reminders lose to hard skill instructions — fix source, not symptom
-
-**Session 12 (2026-04-09)** — Excel export origin/branch deep dive
-- Branch name in export comes from `branch.l` in MongoDB session, NOT BigQuery
-- `branch.o` in MongoDB = `origin` in `analytics_daily` BigQuery table — direct link
-- `analytics_daily.origin` = zone code (e.g. `sunway.ALL`) OR hardware sensor ID depending on org
-- Export correct: Origin = `row.origin`, Branch = `branch.l` — confirmed by Z, no changes needed
+**Sessions 1-12 (2026-04-06/09)** — Setup through export deep dive
+- Tupa named + memory system installed. Dev workflow: `docker compose up -d database cache` + `pnpm run dev`. Mongo: `mongorestore` with `database-dump-dev`.
+- Git Flow: Main→Development→Feature. Amirul pushes to `development`; Z reviews PRs to `main`. BigQuery: `emerald.analytics_daily` (aggregated) vs `emerald.analytics_hourly` (granular). Export uses single SQL per type; `tsc --watch` doesn't copy `.sql` — copy manually. Origin = `row.origin`, Branch = `branch.l` from MongoDB (confirmed by Z).
 
 **Session 13 (2026-04-09)** — Token optimisation & memory restructure
 - Installed caveman compression skill — compressed all prose files in repo (~18% savings)
@@ -92,3 +57,9 @@
 - Hermes changes reverted cleanly; test/README.md written to industry standard
 - Caveman skill created and wired into CLAUDE.md from JuliusBrussee/caveman
 - Next session: mock bq_* data tests using Z's v3-metadata-data-structures SQL sample
+
+**Session 15 (2026-04-09)** — Skill naming fix + workflow clarification
+- All Feature/ skill folders renamed to lowercase-kebab (Ubuntu case-sensitive)
+- post-mortem-system + session-briefing-system SKILL.md missing frontmatter — added
+- Rule: folder name must exactly match `name` field in SKILL.md frontmatter, both lowercase-kebab
+- On "commit" or "push": show manual workflow only, do not run git commands

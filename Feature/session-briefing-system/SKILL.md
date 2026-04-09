@@ -1,3 +1,8 @@
+---
+name: session-briefing-system
+description: "Auto-fires at session start. Delivers a max 12-line brief: last session recap, open reminders, active project health. Triggers on 'brief', 'session brief', 'where did we leave off'. Suppress with 'skip brief'."
+---
+
 # 📋 Session Briefing — Skill Plugin
 
 ## Skill Name

@@ -3,15 +3,14 @@
 
 ## Session RAM Status
 **Current Session**: No active session
-**Last Session**: 2026-04-09 — Functional test suite for mnemonic-http-rpc
+**Last Session**: 2026-04-09 — Skill naming fix + workflow preferences
 **Last Active Project**: TIDE Codebase Onboarding
 
 **Session Recap**:
-- Full functional test suite set up for mnemonic-http-rpc (v1 + v2 endpoints)
-- 133 passing, 0 failing, 20 pending (legacy skipped unit tests)
-- Test DB isolated: `mnemonic-http-rpc-test`
-- Caveman skill installed from JuliusBrussee/caveman
-- Next: mock bq_* data tests using Z's v3-metadata-data-structures SQL sample
+- Fixed Feature/ SKILL.md names — all now lowercase-kebab matching folder names
+- Added frontmatter to post-mortem-system + session-briefing-system
+- Rule: folder name must exactly match `name` field, lowercase-kebab only
+- New pref: on "commit"/"push", show manual workflow steps — never auto-run git
 
 ## Active Project
 - **Name**: TIDE Codebase Onboarding

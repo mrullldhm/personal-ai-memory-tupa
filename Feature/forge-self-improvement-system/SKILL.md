@@ -1,5 +1,5 @@
 ---
-name: forge-skill
+name: forge-self-improvement-system
 description: "Auto-triggers when AI detects a repeated pattern handled ad-hoc 3+ times,
              when AI makes a mistake that a permanent rule would prevent, when AI
              identifies a workflow that should be automated as a skill, or when user

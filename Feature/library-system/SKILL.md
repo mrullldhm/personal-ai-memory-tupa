@@ -1,5 +1,5 @@
 ---
-name: library
+name: library-system
 description: "MUST use when saving to the library, loading from the library,
              searching for existing knowledge, installing pre-made items,
              or when about to create a new library entry. Also triggers when

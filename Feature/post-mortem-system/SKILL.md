@@ -1,3 +1,8 @@
+---
+name: post-mortem-system
+description: "Triggers on 'post-mortem', 'log this failure', 'what went wrong'. Auto-detects failure signals (crashes, rollbacks, regressions, wasted time) and prompts user. Appends entry to main/post-mortems.md."
+---
+
 # 🔥 Post-Mortem — Skill Plugin
 
 ## Skill Name
