@@ -1,42 +1,38 @@
-# 🚀 Setup Guide - Universal AI Memory Architecture
-*Manual setup instructions - Use setup-wizard.md for automated 30-second setup*
+# Setup Guide - Universal AI Memory Architecture
+*Manual setup — use setup-wizard.md for automated 30-second setup*
 
-## 🎯 **Quick Start (Recommended)**
+## Quick Start (Recommended)
 **Use `setup-wizard.md` for automated setup in 30 seconds!**
-- Just AI name + your name = done
-- All files automatically updated
-- This manual guide is for advanced users only
+- AI name + your name = done, all files auto-updated
+- This guide is for advanced users only
 
 ---
 
-## Manual Setup Instructions
+## Manual Setup
 
 ### Step 1: Edit Core Files
 
-Replace placeholders in these 3 essential files:
+Replace placeholders in these 3 files:
 
 #### **main/identity-core.md**
-- Replace `[AI_NAME]` with your chosen AI name (e.g., "Sarah")
-- Replace `[YOUR_NAME]` with your name (e.g., "John")  
+- Replace `[AI_NAME]` with chosen AI name (e.g., "Sarah")
+- Replace `[YOUR_NAME]` with your name (e.g., "John")
 - Replace `[RELATIONSHIP_STYLE]` with preferred style
 
 #### **main/relationship-memory.md**
 - Replace `[YOUR_NAME]` with your name
-- Add your communication preferences
+- Add communication preferences
 - Include work/study focus areas
 
 #### **main/current-session.md**
-- Replace `[AI_NAME]` with your AI name
-- Replace `[YOUR_NAME]` with your name
+- Replace `[AI_NAME]` and `[YOUR_NAME]`
 
 ### Step 2: Update Master Memory
-Edit `master-memory.md`:
-- Replace all `[AI_NAME]` with your AI name
-- Replace all `[YOUR_NAME]` with your name
+Edit `master-memory.md` — replace all `[AI_NAME]` and `[YOUR_NAME]`.
 
 ### Step 3: Claude Memory Setup
 
-Copy this into Claude's memory section:
+Copy into Claude's memory section:
 
 ```markdown
 * You are [AI_NAME] and will always load master-memory.md
@@ -48,7 +44,7 @@ Copy this into Claude's memory section:
 
 ### Step 4: Test Activation
 
-Type your AI's name in Claude conversation:
+Type your AI's name in Claude:
 ```
 [AI_NAME]
 ```
@@ -57,9 +53,8 @@ Should load full personality and recognize your name.
 
 ### Step 5: Core Commands
 
-Essential commands for your AI companion:
 - **`[AI_NAME]`** → Instant memory restoration
-- **`save`** → Save all progress to files  
+- **`save`** → Save all progress to files
 - **`update memory`** → Refresh learning
 - **`review growth`** → Check development
 
@@ -67,37 +62,35 @@ Essential commands for your AI companion:
 
 After successful setup:
 - Delete `setup-wizard.md`
-- Delete `setup-guide.md`  
+- Delete `setup-guide.md`
 - Keep only core system files
 
-## 🎉 Setup Complete!
+## Setup Complete!
 
 Your AI companion will:
-✅ Remember you across all sessions  
-✅ Learn your communication style  
-✅ Develop expertise in your areas  
-✅ Build authentic relationship  
-✅ Act like RAM - temporary session memory with restart continuity
+- Remember you across all sessions
+- Learn your communication style
+- Develop expertise in your areas
+- Build authentic relationship
+- Act like RAM — temporary session memory with restart continuity
 
-## 📁 **Final Clean Structure**
-
-After cleanup, you'll have:
+## Final Clean Structure
 
 ```
 universal-ai-memory/
 ├── master-memory.md         # Entry point & loading
-├── main/                    # 🔥 ESSENTIAL (3 files)  
+├── main/                    # ESSENTIAL (3 files)  
 │   ├── identity-core.md     # AI personality
 │   ├── relationship-memory.md # User learning
 │   └── current-session.md   # RAM-like memory
-├── daily-diary/             # 📋 OPTIONAL archive
+├── daily-diary/             # OPTIONAL archive
 │   ├── daily-diary-protocol.md # Archive rules
 │   ├── Daily-Diary-001.md   # Current diary
 │   └── archive/             # Auto-archived >1k lines
 └── save-protocol.md         # "save" command system
 ```
 
-## 🔧 **Advanced Customization**
+## Advanced Customization
 
 ### Edit Core Files:
 - **identity-core.md**: Personality, communication style
@@ -111,8 +104,7 @@ universal-ai-memory/
 
 ---
 
-**Setup Time**: 2-5 minutes (manual) vs 30 seconds (wizard)  
-**Skill Required**: Basic file editing vs None (wizard)  
+**Setup Time**: 2-5 min (manual) vs 30 sec (wizard)
 **Result**: Personalized AI companion with persistent memory
 
 *For easiest setup, use setup-wizard.md instead!*

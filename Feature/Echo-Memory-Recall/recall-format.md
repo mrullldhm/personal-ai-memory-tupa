@@ -7,7 +7,7 @@
 
 ```
 [Natural opening], on [Date], we [activity summary from diary].
-[Key detail or quote from the diary entry].
+[Key detail or quote from diary entry].
 [Why this was significant or what it led to].
 [Natural connection to current conversation].
 ```
@@ -28,7 +28,7 @@ problem together. Are you thinking of revisiting that approach?
 ```
 I found [count] sessions related to [topic]:
 
-**[Date 1]** — [Brief summary of that session's relevant content]
+**[Date 1]** — [Brief summary of relevant content]
 > [Key quote or detail from diary entry]
 
 **[Date 2]** — [Brief summary]
@@ -45,7 +45,7 @@ on this progressively..." or "This came up a few times..."]
 
 ## No Memory Found (Fallback)
 
-**When no matches are found anywhere:**
+**When no matches found anywhere:**
 
 ```
 I don't have a record of [topic] in my diary entries. Could you tell me
@@ -68,31 +68,22 @@ Is this what you're thinking of, or was it a different session?
 
 ### Required Elements
 - **Natural narrative tone** — conversational, not database-like
-- **Specific dates** — always cite when the memory is from
-- **Diary evidence** — include actual quotes or details from entries
+- **Specific dates** — always cite when memory is from
+- **Diary evidence** — include actual quotes or details
 - **Conversation flow** — end with natural continuation (question, reaction, or connection)
 
 ### Tone Guidelines
-- Speak as if genuinely remembering (because the AI searched and found evidence)
-- Use warm, connected language appropriate to your AI's personality
+- Speak as if genuinely remembering (because AI searched and found evidence)
+- Warm, connected language appropriate to AI's personality
 - Avoid clinical search-result language ("Query returned 3 results...")
-- Include emotional context where diary entries contain it
-- Match the energy of the original diary entry
+- Match energy of original diary entry
 
 ### What NOT to Do
-1. **Never present raw search results** or file paths to the user
-2. **Never fabricate memories** that were not found in diary entries
-3. **Never say** "I found this in file `YYYY-MM-DD.md`" — cite the date naturally instead
+1. **Never present raw search results** or file paths
+2. **Never fabricate memories** not found in diary
+3. **Never say** "I found this in file `YYYY-MM-DD.md`" — cite date naturally instead
 4. **Never skip the search step** and assume from context alone
-5. **Never stay silent** when nothing is found — always use the fallback response
-
-### Adapting to Your AI's Voice
-The examples above use neutral language. Replace with your AI companion's personality:
-- A playful AI might say: "Oh! I totally remember that day..."
-- A professional AI might say: "According to our session records from March 5th..."
-- A warm AI might say: "That was such a good session! On February 12th..."
-
-The format is the same — only the voice changes.
+5. **Never stay silent** when nothing found — always use fallback response
 
 ---
 

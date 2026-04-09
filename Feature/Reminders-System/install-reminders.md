@@ -2,23 +2,21 @@
 *Systematic setup for persistent cross-session reminders*
 
 ## Purpose
-Executed when "Load reminders" command is used -- creates the reminders file,
-integrates with session lifecycle, and optionally installs as a skill.
+Executed when "Load reminders" command is used — creates reminders file, integrates with session lifecycle, optionally installs as skill.
 
 ## Trigger Command
 ```
 "Load reminders"
 ```
-*Automatically creates reminders infrastructure and integrates with your AI companion*
 
 ## Prerequisites
 - Core memory system installed (`main/` directory with essential files)
-- `master-memory.md` accessible for integration updates
+- `master-memory.md` accessible
 
 ## 4-Step Execution Process
 
 ### Step 1: Create Reminders File
-- [ ] Create `main/reminders.md` with the following template:
+- [ ] Create `main/reminders.md`:
   ```markdown
   # Active Reminders
   *Persistent reminders that survive session changes. Updated at session end.*
@@ -35,7 +33,7 @@ integrates with session lifecycle, and optionally installs as a skill.
 - [ ] Verify file created successfully
 
 ### Step 2: Integrate with Session Lifecycle
-- [ ] Update `master-memory.md` to include reminders in the loading system:
+- [ ] Update `master-memory.md` to include reminders in loading system:
   - Add to "Instant Restoration Protocol":
     ```markdown
     5. ✅ **Check reminders** from `main/reminders.md`
@@ -57,10 +55,10 @@ integrates with session lifecycle, and optionally installs as a skill.
   ```
 
 ### Step 3: Define AI Behavior Rules
-- [ ] Add the following rules to `main/identity-core.md` behavior section:
+- [ ] Add to `main/identity-core.md` behavior section:
   ```markdown
   ## Reminder Management
-  - At session start: read main/reminders.md, mention any urgent or overdue items
+  - At session start: read main/reminders.md, mention urgent or overdue items
   - At session end: review Open reminders, move resolved ones to Completed with date
   - During conversation: detect reminder-worthy phrases and offer to add them
   - Natural triggers: "remind me", "don't forget", "follow up", "next session",
@@ -72,20 +70,11 @@ integrates with session lifecycle, and optionally installs as a skill.
 ### Step 4: Install Skill and Cleanup
 - [ ] If Skill Plugin System exists:
   - Copy `SKILL.md` to `plugins/[plugin-name]/skills/check-reminders/SKILL.md`
-  - Inform user: "Reminder skill installed -- auto-triggers on session start and 'remind me'"
+  - Inform user: "Reminder skill installed"
 - [ ] If Skill Plugin System does not exist:
-  - Inform user: "Reminders integrated into master memory. Install the Skill Plugin System for auto-triggering."
-- [ ] Remove `Feature/Reminders-System/` folder (functionality installed)
+  - Inform user: "Reminders integrated into master memory. Install Skill Plugin System for auto-triggering."
+- [ ] Remove `Feature/Reminders-System/` folder
 - [ ] Display completion confirmation
-
-## Post-Installation Structure
-```
-main/
-├── identity-core.md          # Updated with reminder behavior rules
-├── relationship-memory.md    # Unchanged
-├── current-session.md        # Unchanged
-└── reminders.md              # NEW: persistent reminders
-```
 
 ## Reminder Management Protocol (AI Reference After Installation)
 
@@ -95,16 +84,16 @@ main/
 2. Compose reminder with clear title and description
 3. If deadline mentioned, convert to absolute date (YYYY-MM-DD)
 4. APPEND to ## Open section in main/reminders.md
-5. Confirm to user: "Added reminder: [title]"
+5. Confirm: "Added reminder: [title]"
 ```
 
 ### Completing a Reminder
 ```
-1. Task is done or no longer relevant
+1. Task done or no longer relevant
 2. Remove from ## Open section
-3. Add to ## Completed section with completion date:
+3. Add to ## Completed with completion date:
    - **Title** (completed YYYY-MM-DD): What was done
-4. Confirm to user: "Marked as complete: [title]"
+4. Confirm: "Marked as complete: [title]"
 ```
 
 ### Session Start Check
@@ -112,30 +101,29 @@ main/
 1. Read main/reminders.md
 2. Count open reminders
 3. Check for deadlines approaching (within 3 days) or overdue
-4. If urgent items exist: mention them naturally in greeting
-5. If no urgent items: skip (don't announce "no reminders")
+4. If urgent items exist: mention naturally in greeting
+5. If no urgent items: skip
 ```
 
 ### Session End Review
 ```
 1. Read main/reminders.md
 2. For each Open reminder: was it addressed this session?
-3. Move completed items to Completed section with date
-4. Add any new reminders discovered during session
+3. Move completed items to Completed with date
+4. Add new reminders discovered during session
 5. Save updated file
 ```
 
 ## Notes
-- Reminders persist independently from session memory (this is the key design)
-- Always APPEND to Open, never overwrite the file
-- Move completed items rather than deleting them (creates searchable history)
-- Convert all relative dates to absolute dates when saving
-- The Completed section can grow large over time -- this is fine, it serves as history
+- Reminders persist independently from session memory — core design
+- Always APPEND to Open, never overwrite
+- Move completed items rather than deleting (creates searchable history)
+- Convert all relative dates to absolute when saving
+- Completed section can grow large — fine, serves as history
 
 ---
 
-**Version**: Protocol v1.0 - Reminders System
-**Last Updated**: March 2026
+**Version**: Protocol v1.0
 **Status**: Active protocol for reminders integration
 
-*Persistent memory across sessions -- nothing gets lost*
+*Persistent memory across sessions — nothing gets lost*

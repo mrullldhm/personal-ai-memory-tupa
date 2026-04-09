@@ -1,17 +1,17 @@
-# 📋 Session Briefing System
+# Session Briefing System
 
-A proactive session-start intelligence layer that delivers a concise brief at the beginning of every conversation — covering where you left off, open reminders, active project status, and a time-aware work suggestion.
+Proactive session-start intelligence layer — delivers concise brief at start of every conversation covering where you left off, open reminders, active project status, and time-aware work suggestion.
 
 ---
 
 ## What It Does
 
-At every session start, the Session Briefing System automatically delivers a structured brief (under 12 lines) before processing the user's first request:
+At every session start, automatically delivers structured brief (under 12 lines) before processing first request:
 
 - **Where we left off** — last session recap from `current-session.md`
-- **Open reminders** — items from Reminders System (only if items exist)
+- **Open reminders** — from Reminders System (only if items exist)
 - **Active project** — LRU #1 status from Project Management System
-- **Attention flags** — idle or stale projects worth noting (max 3)
+- **Attention flags** — idle or stale projects (max 3)
 - **Time-adaptive suggestion** — work type recommendation based on time of day
 
 ---
@@ -32,11 +32,11 @@ Suggestion: [time-appropriate work type]
 
 ## Companion Systems
 
-Works best alongside these existing systems, but each is optional:
+Works best alongside these systems, but each is optional:
 
 | System | Enhancement |
 |--------|-------------|
-| **Time-based-Aware-System** | Powers the time-adaptive work suggestion |
+| **Time-based-Aware-System** | Powers time-adaptive work suggestion |
 | **LRU-Project-Management-System** | Provides active project + idle/stale health flags |
 | **Reminders-System** | Surfaces open reminders in the brief |
 
@@ -49,14 +49,14 @@ Can be used standalone with just `main/current-session.md`.
 | Input | Action |
 |-------|--------|
 | Session start | Brief auto-delivers (no command needed) |
-| `"brief"` | Manually trigger the brief at any time |
-| `"skip brief"` | Suppress the brief for this session only |
+| `"brief"` | Manually trigger brief at any time |
+| `"skip brief"` | Suppress brief for this session only |
 
 ---
 
 ## Requirements
 
-- `main/current-session.md` — required (last session recap source)
+- `main/current-session.md` — required
 - `main/reminders.md` — optional (Reminders System)
 - Project list file — optional (LRU Project Management System)
 - Time detection — optional (Time-based-Aware System)

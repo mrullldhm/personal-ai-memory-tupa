@@ -1,5 +1,5 @@
-# 🔍 Echo Memory Recall Installation Protocol
-*Systematic memory recall setup for AI MemoryCore companions*
+# Echo Memory Recall Installation Protocol
+*Memory recall setup for AI MemoryCore companions*
 
 ## Purpose
 Executed when "Load echo-recall" command is used — installs memory search and narrative recall capabilities, adds trigger detection, and cleans up.
@@ -8,12 +8,10 @@ Executed when "Load echo-recall" command is used — installs memory search and 
 ```
 "Load echo-recall"
 ```
-*Automatically installs recall protocol, trigger detection, and format reference*
 
 ## Prerequisites
 - `daily-diary/` directory must exist with dated entries
-- Works best with **Save-Diary-System** installed (but not required)
-- Existing diary files in any dated format also work
+- Works best with **Save-Diary-System** installed (not required)
 
 ## 5-Step Execution Process
 
@@ -21,17 +19,14 @@ Executed when "Load echo-recall" command is used — installs memory search and 
 - [ ] Ask user: **"What would you like to name your memory recall system?"**
   - Default: `"Memory Recall"`
   - Examples: `"Echo"`, `"Remember"`, `"Flashback"`, `"Time Capsule"`, `"Rewind"`
-- [ ] Store chosen name as `[RECALL_NAME]` for use in all references
-- [ ] Execute `date` command (or `Get-Date` on Windows) to get current timestamp
+- [ ] Store chosen name as `[RECALL_NAME]`
+- [ ] Execute `date` command (or `Get-Date` on Windows)
 
 ### Step 2: Verify Diary Infrastructure
 - [ ] Check `daily-diary/` directory exists
-- [ ] Check for entries in `daily-diary/current/` (flat files or folders)
-- [ ] Check for entries in `daily-diary/archived/*/` (if any)
-- [ ] If no diary infrastructure exists:
-  - Inform user: "Memory recall searches diary entries. You'll need diary files to search through."
-  - Recommend: "Install the Save-Diary-System feature first for best results."
-  - Allow user to continue anyway (recall will work once diary entries exist)
+- [ ] Check entries in `daily-diary/current/`
+- [ ] Check entries in `daily-diary/archived/*/` (if any)
+- [ ] If no diary infrastructure: inform user, recommend Save-Diary-System first, allow to continue
 
 ### Step 3: Install Recall Protocol into AI Memory
 - [ ] Add recall trigger detection to AI's main memory file (`identity-core.md` or `main-memory.md`):
@@ -67,8 +62,7 @@ Executed when "Load echo-recall" command is used — installs memory search and 
 
 ### Step 4: Install Recall Format Template
 - [ ] Copy `recall-format.md` to `daily-diary/recall-format.md`
-  (permanent reference for how recall output should be structured)
-- [ ] Verify format template is accessible from AI memory references
+- [ ] Verify format template accessible from AI memory references
 
 ### Step 5: Update Master Memory and Cleanup
 - [ ] Add recall reference to `master-memory.md` Optional Components:
@@ -80,12 +74,12 @@ Executed when "Load echo-recall" command is used — installs memory search and 
   - Fallback: Asks user when nothing found
   - Format: daily-diary/recall-format.md
   ```
-- [ ] Add recall commands to Simple Commands section:
+- [ ] Add recall commands to Simple Commands:
   ```
   "recall [topic]" → Search diary for past sessions about [topic]
   "check history" → Search diary for relevant past context
   ```
-- [ ] Remove `Feature/Echo-Memory-Recall/` folder (functionality installed)
+- [ ] Remove `Feature/Echo-Memory-Recall/` folder
 - [ ] Display completion confirmation with timestamp
 
 ## Recall Search Protocol (AI Reference After Installation)
@@ -97,7 +91,6 @@ From user's question, extract 2-4 most specific terms:
 - Examples:
   - "Do you remember when we fixed the auth bug?" → `["auth", "bug", "fixed"]`
   - "What happened with the dashboard project?" → `["dashboard", "project"]`
-  - "When did we set up the database?" → `["database", "set up"]`
 
 ### Search Execution
 ```
@@ -109,10 +102,10 @@ From user's question, extract 2-4 most specific terms:
 ```
 
 ### Narrative Composition
-From matched diary excerpts, compose natural response:
+From matched diary excerpts:
 1. **Opening** — "Yes, I remember! On [date]..." or "I found that on [date]..."
-2. **Context** — Brief excerpt with key details from diary entry
-3. **Significance** — Why this was important or what it meant
+2. **Context** — Brief excerpt with key details
+3. **Significance** — Why this was important
 4. **Connection** — How it relates to current conversation
 5. **Continue** — Flow naturally into ongoing discussion
 
@@ -121,29 +114,14 @@ From matched diary excerpts, compose natural response:
 | Situation | Behavior |
 |-----------|----------|
 | No matches anywhere | Ask user: "I don't have a record of that..." |
-| Multiple matches | Present chronologically, note patterns if visible |
-| Vague query | Ask user to be more specific before searching |
-| Match only in archived months | Search takes longer, note the date range found |
+| Multiple matches | Present chronologically, note patterns |
+| Vague query | Ask for more specifics before searching |
+| Match only in archived months | Note the date range found |
 | Partial match | Present as uncertain: "I found something that might be related..." |
-
-## Post-Installation Result
-- AI can recall past sessions through natural conversation
-- Never fabricates context — always searches diary evidence first
-- Gracefully handles missing memories by asking the user
-- Recall output reads as natural narrative, not database dump
-- Works with any diary format (Save-Diary-System or existing protocol)
-
-## Notes
-- Recall quality depends on diary entry quality (richer entries = better recall)
-- Search is keyword-based, not semantic (relies on word matches in diary text)
-- For best results, diary entries should include specific technical terms and names
-- Cross-platform compatible: Uses file reading, not platform-specific search tools
-- The `[RECALL_NAME]` placeholder should be replaced with the name chosen in Step 1
 
 ---
 
-**Version**: Protocol v1.0 - Echo Memory Recall Installation Workflow
-**Last Updated**: February 2026
+**Version**: Protocol v1.0
 **Status**: Active protocol for memory recall setup
 
 *Search before speaking, narrate from evidence, ask when uncertain*

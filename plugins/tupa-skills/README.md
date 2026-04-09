@@ -12,11 +12,11 @@
 
 ## Adding New Skills
 
-1. Create a folder: `skills/[skill-name]/`
+1. Create folder: `skills/[skill-name]/`
 2. Write `SKILL.md` with YAML frontmatter (`name` + `description`)
 3. Done — Claude Code auto-discovers it
 
-See `skill-format.md` for the standard SKILL.md structure.
+See `skill-format.md` for standard SKILL.md structure.
 
 ## Plugin Info
 - **Plugin**: tupa-skills v1.0.0

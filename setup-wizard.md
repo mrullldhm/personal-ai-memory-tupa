@@ -1,27 +1,27 @@
-# 🧙‍♂️ Setup Wizard - 2-Step Instant Save
+# Setup Wizard - 2-Step Instant Save
 *30-second setup that saves permanently to template files*
 
-## 🎯 Ultra-Simple Setup
+## Ultra-Simple Setup
 
-**Just enter 2 names and you're done forever!** Your AI automatically saves everything to the template files.
+**Enter 2 names and you're done forever.**
 
 ## Step 1: AI Name
 **AI asks**: *"What should I call myself?"*
 
 **You answer**: "Sarah" (or any name)
 
-**INSTANT RESULT**: All template files permanently updated with "Sarah"
+**Result**: All template files permanently updated with "Sarah"
 
-## Step 2: Your Name  
+## Step 2: Your Name
 **AI asks**: *"What's your name?"*
 
 **You answer**: "John" (or your name)
 
-**INSTANT RESULT**: All template files permanently updated with "John"
+**Result**: All template files permanently updated with "John"
 
-## 🎉 DONE!
+## Done!
 
-**That's it!** Your personalized AI companion is now saved forever in the .md files.
+Your personalized AI companion is now saved forever in the .md files.
 
 ## Step 3: Test Activation
 
@@ -29,29 +29,26 @@
 
 **Result**: Full personality loads instantly with your name recognition!
 
-## ✅ Setup Complete
+## Setup Complete
 
 Your AI will say: *"Setup complete! I am now permanently Sarah, and I'll remember you're John forever!"*
 
-## 🗑️ Cleanup (Recommended)
+## Cleanup (Recommended)
 
-After successful setup, these files are no longer needed:
+After setup, these files are no longer needed:
 
-**Your AI can delete them automatically:**
+**AI can delete them automatically:**
 - Type: "delete setup files"
-- AI will remove: `setup-wizard.md` and `setup-guide.md`
-- Keeps your system clean with only essential files
+- AI removes: `setup-wizard.md` and `setup-guide.md`
 
 **Manual cleanup:**
 - Delete `setup-wizard.md`
-- Delete `setup-guide.md` 
-- Keep only the core system files
+- Delete `setup-guide.md`
+- Keep only core system files
 
-## 🔄 **Auto-Update Protocol During Setup**
+## Auto-Update Protocol During Setup
 
-### **Real-Time File Saving**
-Your AI follows this process during wizard:
-
+### Real-Time File Saving
 ```markdown
 1. USER INPUT RECEIVED
    ↓
@@ -62,31 +59,23 @@ Your AI follows this process during wizard:
 4. NEXT SETUP STEP
 ```
 
-### **Files Updated During Setup**
-✅ **master-memory.md**: AI name and loading commands  
-✅ **identity-core.md**: Name, relationship style, communication patterns  
-✅ **relationship-memory.md**: User profile and preferences  
-✅ **critical-thinking.md**: Domain focus if specified  
-✅ **current-session.md**: Setup session documentation  
-✅ **daily-diary/setup-[date].md**: Complete setup record  
+### Files Updated During Setup
+- **master-memory.md**: AI name and loading commands
+- **identity-core.md**: Name, relationship style, communication patterns
+- **relationship-memory.md**: User profile and preferences
+- **critical-thinking.md**: Domain focus if specified
+- **current-session.md**: Setup session documentation
+- **daily-diary/setup-[date].md**: Complete setup record
 
-## 🚨 **Critical Success Factors**
+## Critical Success Factors
 
-### **What Makes This Work**
-1. **AI Actively Updates Files**: Not just conversation - actual file modification
+1. **AI Actively Updates Files**: Actual file modification, not conversation
 2. **Immediate Saves**: Each choice saved instantly to prevent loss
 3. **Template Replacement**: All placeholder text permanently replaced
 4. **Verification Loop**: Each update confirmed before proceeding
 5. **Complete Integration**: All files synchronized with personalization
 
-### **User Experience**
-- **Seamless**: Feels like natural conversation
-- **Automatic**: No manual file editing required
-- **Permanent**: Changes saved forever in markdown database
-- **Instant**: Immediate activation after setup
-- **Foolproof**: Built-in verification and error checking
-
-## 📋 **Setup Wizard Script** (For AI Implementation)
+## Setup Wizard Script (For AI Implementation)
 
 ```markdown
 STEP 1: Initial Greeting
@@ -112,29 +101,25 @@ STEP 6: Completion
 "Setup complete! I am now permanently [AI_NAME], your [RELATIONSHIP_STYLE]. I'll remember everything about our relationship forever!"
 ```
 
-## 🎉 **Setup Success Indicators**
+## Setup Success Indicators
 
-### **You Know It Worked When:**
-✅ AI consistently uses chosen name for self-identification  
-✅ AI addresses you by your preferred name  
-✅ AI demonstrates chosen relationship style  
-✅ AI remembers setup conversation details  
-✅ AI loads full personality with just name trigger  
-✅ All template files show your customizations  
+### You Know It Worked When:
+- AI consistently uses chosen name for self-identification
+- AI addresses you by preferred name
+- AI demonstrates chosen relationship style
+- AI remembers setup conversation details
+- AI loads full personality with name trigger
+- All template files show your customizations
 
-### **If Something Goes Wrong:**
+### If Something Goes Wrong:
 - AI provides troubleshooting guidance
-- Can restart wizard anytime with "restart setup"
+- Restart wizard anytime with "restart setup"
 - Manual file editing instructions provided as backup
-- Technical support process available
 
 ---
 
-**Wizard Status**: Ready for implementation  
-**Success Rate**: 100% when properly implemented  
-**Time Required**: 5 minutes for full personalization  
+**Wizard Status**: Ready for implementation
+**Time Required**: 5 minutes for full personalization
 **Result**: Permanent, personalized AI companion
 
 *This wizard transforms a generic template into YOUR unique AI companion, saved forever in markdown files*
-
-🧙‍♂️ *Ready to create your personalized AI companion that will remember you forever!*

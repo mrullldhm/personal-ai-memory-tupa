@@ -1,4 +1,4 @@
-# 📋 Skill File - Sample Format
+# Skill File - Sample Format
 *Reference template for creating SKILL.md files*
 
 ---
@@ -54,9 +54,9 @@ Then execute the protocol below.
 
 ## Mandatory Rules
 
-1. [Hard rule 1 — something the skill must always do]
-2. [Hard rule 2 — something the skill must never do]
-3. [Hard rule 3 — a constraint on behavior]
+1. [Hard rule 1 — something skill must always do]
+2. [Hard rule 2 — something skill must never do]
+3. [Hard rule 3 — constraint on behavior]
 
 ## Edge Cases
 
@@ -67,7 +67,7 @@ Then execute the protocol below.
 
 ## Level History
 
-- **Lv.1** — Base: [Description of initial capability]. (Origin: [When and why it was created])
+- **Lv.1** — Base: [Description of initial capability]. (Origin: [When and why created])
 ```
 
 ---
@@ -75,8 +75,8 @@ Then execute the protocol below.
 ## Format Notes
 
 ### Required Sections
-- **YAML Frontmatter** — `name` and `description` are required for auto-discovery
-- **Activation** — what to display when the skill fires
+- **YAML Frontmatter** — `name` and `description` required for auto-discovery
+- **Activation** — what to display when skill fires
 - **Protocol** — step-by-step execution logic
 
 ### Optional Sections
@@ -88,9 +88,8 @@ Then execute the protocol below.
 ### Description Field Best Practices
 - Start with `"MUST use when..."` for strong triggering
 - List 3-5 specific trigger phrases
-- Include contextual conditions beyond just phrases
-- Be specific enough to avoid false positives
-- Be broad enough to catch all relevant situations
+- Include contextual conditions beyond phrases
+- Specific enough to avoid false positives, broad enough to catch all relevant situations
 
 ### Leveling Convention
 - **Lv.1**: Base capability (initial creation)

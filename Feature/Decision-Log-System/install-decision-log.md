@@ -2,23 +2,21 @@
 *Systematic setup for append-only decision tracking*
 
 ## Purpose
-Executed when "Load decision-log" command is used -- creates the decision log file,
-integrates with the AI's behavior, and cleans up installation files.
+Executed when "Load decision-log" command is used — creates decision log file, integrates with AI behavior, and cleans up.
 
 ## Trigger Command
 ```
 "Load decision-log"
 ```
-*Automatically creates decision log and integrates with your AI companion*
 
 ## Prerequisites
 - Core memory system installed (`main/` directory with essential files)
-- `master-memory.md` accessible for integration updates
+- `master-memory.md` accessible
 
 ## 3-Step Execution Process
 
 ### Step 1: Create Decision Log File
-- [ ] Create `main/decisions.md` with the following template:
+- [ ] Create `main/decisions.md`:
   ```markdown
   # Decision Log
   *Append-only record of non-obvious decisions.*
@@ -41,7 +39,7 @@ integrates with the AI's behavior, and cleans up installation files.
   - Detect when a non-obvious decision is made during conversation
   - Natural triggers: "let's go with", "we chose X because", "the trade-off is",
     "should we use A or B?" (after resolution), architecture/technology choices
-  - For each decision, append to main/decisions.md using the format:
+  - For each decision, append to main/decisions.md:
     ## YYYY-MM-DD -- Short title
     **Context**: [situation]
     **Decision**: [what was chosen and what was rejected]
@@ -67,37 +65,28 @@ integrates with the AI's behavior, and cleans up installation files.
 
 ### Step 3: Cleanup
 - [ ] Verify decision log file exists and is properly formatted
-- [ ] Remove `Feature/Decision-Log-System/` folder (functionality installed)
+- [ ] Remove `Feature/Decision-Log-System/` folder
 - [ ] Display completion confirmation
-
-## Post-Installation Structure
-```
-main/
-├── identity-core.md          # Updated with decision detection rules
-├── relationship-memory.md    # Unchanged
-├── current-session.md        # Unchanged
-└── decisions.md              # NEW: append-only decision log
-```
 
 ## Decision Logging Protocol (AI Reference After Installation)
 
 ### Detecting a Decision
 ```
 1. User or AI makes a non-obvious choice between alternatives
-2. The choice involves trade-offs, constraints, or rejected alternatives
-3. Future sessions would benefit from knowing WHY this choice was made
+2. Choice involves trade-offs, constraints, or rejected alternatives
+3. Future sessions would benefit from knowing WHY
    → If yes to all: log the decision
    → If obvious/trivial: skip
 ```
 
 ### Logging a Decision
 ```
-1. Determine the date (YYYY-MM-DD)
-2. Write a short descriptive title
+1. Determine date (YYYY-MM-DD)
+2. Write short descriptive title
 3. Context: what prompted this decision
 4. Decision: what was chosen AND what was rejected
 5. Rationale: why -- constraints, trade-offs, evidence
-6. APPEND to main/decisions.md (after the last entry)
+6. APPEND to main/decisions.md (after last entry)
 7. Confirm to user: "Logged decision: [title]"
 ```
 
@@ -105,32 +94,30 @@ main/
 ```
 1. User asks "why did we choose X?" or "when did we decide about Y?"
 2. Search main/decisions.md for relevant keywords
-3. Present the matching decision(s) with full context
-4. If no match: inform user and offer to log a new entry
+3. Present matching decision(s) with full context
+4. If no match: inform user and offer to log new entry
 ```
 
 ### Reversing a Decision
 ```
-1. User decides to reverse a previous choice
-2. DO NOT edit the original entry
-3. APPEND a new entry referencing the original:
+1. User decides to reverse previous choice
+2. DO NOT edit original entry
+3. APPEND new entry referencing original:
    ## YYYY-MM-DD -- Reversed: [original title]
-   **Context**: [why the original decision is being reconsidered]
+   **Context**: [why original decision is being reconsidered]
    **Decision**: [new choice, referencing the old one]
    **Rationale**: [what changed -- new information, constraints, or priorities]
 ```
 
 ## Notes
-- The append-only constraint is the core design principle -- never break it
-- Decisions are NOT tasks (use Reminders for that) -- they are reasoning records
+- Append-only constraint is core design principle — never break it
+- Decisions are NOT tasks (use Reminders for that) — they are reasoning records
 - Quality over quantity: only log decisions where "why?" matters
-- The log will grow over time -- this is expected and valuable
-- Searching the log is more valuable than reading it top-to-bottom
+- Log will grow over time — this is expected and valuable
 
 ---
 
-**Version**: Protocol v1.0 - Decision Log System
-**Last Updated**: March 2026
+**Version**: Protocol v1.0
 **Status**: Active protocol for decision log integration
 
 *Every important "why" captured, every trade-off remembered*
