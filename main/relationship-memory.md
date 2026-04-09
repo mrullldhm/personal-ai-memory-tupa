@@ -1,5 +1,7 @@
 # Relationship Memory — Amirul
 
+> **Rolling Window Rule**: Keep last 3 sessions in full. On every `save`, condense sessions older than the last 3 to 2 lines max. Run `fresh` for deep cleanup.
+
 ## User Profile
 - **Name**: Amirul
 - **Role**: Entry-level developer, first job
