@@ -6,14 +6,20 @@
 - **Period**: 2026-04-06 - Active
 - **Tech Stack**: Hermes (Express/Pug) + mnemonic-http-rpc (TypeScript/Express) + MongoDB + BigQuery + Redis
 - **Completion**: 45%
-- **Duration**: ~180 min
+- **Duration**: ~195 min
 
 ## Current Status
-- **Last Session**: 2026-04-08 - BigQuery exploration — emerald dataset schema study
-- **Next Steps**: Create `development` branch for `hermes` and `pdfgenerator` (still pending). Begin deeper BigQuery work as assigned by Z.
+- **Last Session**: 2026-04-09 - Workflow & session hygiene setup (Tupa `done` command)
+- **Next Steps**: Create `development` branch for `hermes` and `pdfgenerator` (still pending). Resume BigQuery work as assigned by Z. Post Asana update for Session 9 export redesign work.
 - **Known Issues**: AWS ECR credentials needed for full Docker setup — use Option B (pnpm dev) instead.
 
 ## Session History (Last 5)
+
+### 2026-04-09 - Workflow & session hygiene setup
+- **Focus**: No code work — Tupa workflow session
+- **Outcome**: Added `done` end-of-session command to CLAUDE.md — auto-runs save, save diary, save project, clear current-session.md
+- **Learned**: Why current-session.md must be cleared between unrelated sessions (stale context bleeds in via Tupa load)
+- **Time Spent**: ~15 min
 
 ### 2026-04-08 - BigQuery exploration — emerald dataset
 - **Explored**: BigQuery Studio UI layout (project → dataset → table hierarchy)
@@ -44,18 +50,9 @@
 - **Key Files**: `hermes/app/controllers/export.js` (lines 181–353), `hermes/app/helpers/excels.js`, `excel-export@0.5.1`
 - **Time Spent**: ~45 min
 
-### 2026-04-07 - Port fix + git workflow
-- **Changes**: Fixed APP_PORT 3000 → 3001 in `src/config/config.js`, `docker-compose.yml`, `Dockerfile`
-- **Learned**: Why frontend uses Express (SSR), git branch workflow (never commit to main), git push -u
-- **Time Spent**: ~30 min
-
-### 2026-04-06 - Codebase deep dive + documentation
-- **Changes**: Created CODEBASE-GUIDE.md, HERMES-GUIDE.md, MNEMONIC-GUIDE.md in /home/tidea/projects/
-- **Learned**: Full architecture of both repos — how Hermes and mnemonic-http-rpc connect, data flow, visitor types, multi-tenant structure, API versioning (V1 RPC vs V2 REST)
-- **Time Spent**: ~60 min
-
 ## Historical Summary
-*No old sessions to summarize yet.*
+- **2026-04-07** - Port fix + git workflow: Fixed APP_PORT 3000→3001 in config, docker-compose, Dockerfile. Learned SSR reasoning and git branch rules. (~30 min)
+- **2026-04-06** - Codebase deep dive + documentation: Created CODEBASE-GUIDE.md, HERMES-GUIDE.md, MNEMONIC-GUIDE.md. Learned full hermes + mnemonic-http-rpc architecture, data flow, visitor types, API versioning. (~60 min)
 
 ## Technical Notes
 - **Repositories**:
@@ -70,4 +67,4 @@
 - **Key Config**: Backend API Key = `mnemonic-http-rpc-dev-secret-api-key`
 
 ---
-**Last Updated**: 2026-04-08 (session 7) | **Position**: #1/10 Active
+**Last Updated**: 2026-04-09 (session 10) | **Position**: #1/10 Active

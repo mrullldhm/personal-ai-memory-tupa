@@ -121,6 +121,13 @@
 - Use `database-dump-dev` for login/basic testing; `database-dump` for real analytics data
 - Verified via MongoDB Compass at `mongodb://localhost:27017`, database: `mnemonic-http-rpc-development`
 
+**Session 10 (2026-04-09)**: Workflow & session hygiene
+- Amirul asked for a proper workflow/procedure guide for using Tupa
+- Confirmed habit: does each different task in a different session — good practice, endorsed
+- Added `done` command to CLAUDE.md — triggers save + save diary + save project + clear current-session.md
+- Learned why current-session.md must be cleared: stale context bleeds into unrelated next sessions via the Tupa load protocol
+- Does not want `commit` as part of the `done` protocol — handles commits separately
+
 **Session 9 (2026-04-08)**: Export format redesign — new CSV column layout
 - Z assigned a new export format for all 3 export types (summary, daily, hourly)
 - Replaced the old 4-query-per-branch approach with a single SQL file per export type
