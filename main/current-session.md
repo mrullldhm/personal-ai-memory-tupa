@@ -3,14 +3,15 @@
 
 ## Session RAM Status
 **Current Session**: No active session
-**Last Session**: 2026-04-09 — Excel export origin/branch data flow exploration
+**Last Session**: 2026-04-09 — Functional test suite for mnemonic-http-rpc
 **Last Active Project**: TIDE Codebase Onboarding
 
 **Session Recap**:
-- `branch.o` (MongoDB) → `analytics_daily.origin` (BigQuery) → `row.origin` in CSV
-- `analytics_daily.origin` format varies by org — zone codes or hardware sensor IDs — `branch.o` always matches
-- Export confirmed correct by Z — no changes needed
-- Pending: Asana update for Session 9 export redesign, `development` branches for `hermes` and `pdfgenerator`
+- Full functional test suite set up for mnemonic-http-rpc (v1 + v2 endpoints)
+- 133 passing, 0 failing, 20 pending (legacy skipped unit tests)
+- Test DB isolated: `mnemonic-http-rpc-test`
+- Caveman skill installed from JuliusBrussee/caveman
+- Next: mock bq_* data tests using Z's v3-metadata-data-structures SQL sample
 
 ## Active Project
 - **Name**: TIDE Codebase Onboarding

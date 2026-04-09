@@ -5,15 +5,21 @@
 - **Type**: Onboarding / Documentation
 - **Period**: 2026-04-06 - Active
 - **Tech Stack**: Hermes (Express/Pug) + mnemonic-http-rpc (TypeScript/Express) + MongoDB + BigQuery + Redis
-- **Completion**: 45%
-- **Duration**: ~195 min
+- **Completion**: 55%
+- **Duration**: ~255 min
 
 ## Current Status
-- **Last Session**: 2026-04-09 - Excel export origin/branch data flow exploration
-- **Next Steps**: Create `development` branch for `hermes` and `pdfgenerator` (still pending). Post Asana update for Session 9 export redesign work.
+- **Last Session**: 2026-04-09 - Functional test suite for mnemonic-http-rpc
+- **Next Steps**: Mock bq_* data tests using Z's v3-metadata-data-structures SQL sample. Create `development` branch for `hermes` and `pdfgenerator` (still pending).
 - **Known Issues**: AWS ECR credentials needed for full Docker setup — use Option B (pnpm dev) instead.
 
 ## Session History (Last 5)
+
+### 2026-04-09 - Functional test suite for mnemonic-http-rpc
+- **Focus**: Set up full functional API test coverage for all v1 + v2 endpoints
+- **Outcome**: 133 passing, 0 failing, 20 pending. Test DB isolated (mnemonic-http-rpc-test). Pushed to development branch.
+- **Learned**: chai v6 = ESM-only, must use v4. bq_* missing params → 200 early exit not 400. validateKeySync → plain Error → 500.
+- **Time Spent**: ~60 min
 
 ### 2026-04-09 - Excel export origin/branch data flow
 - **Focus**: How branch name/code flows through export pipeline
@@ -79,4 +85,4 @@
 - **Key Config**: Backend API Key = `mnemonic-http-rpc-dev-secret-api-key`
 
 ---
-**Last Updated**: 2026-04-09 (session 12) | **Position**: #1/10 Active
+**Last Updated**: 2026-04-09 (session 14) | **Position**: #1/10 Active

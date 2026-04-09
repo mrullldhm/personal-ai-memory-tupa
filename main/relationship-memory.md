@@ -84,3 +84,11 @@
 - Installed caveman compression skill — compressed all prose files in repo (~18% savings)
 - Restructured relationship-memory.md — stripped dead template filler, condensed old sessions
 - Concern: `.original.md` backup files (35+) may cancel compression gains — deleted
+
+**Session 14 (2026-04-09)** — Functional testing for mnemonic-http-rpc
+- Set up full functional test suite: ping, org, user, campaign, common_visit, hermes_*, bq_*, v2 login
+- Test DB isolation via setup.js (mnemonic-http-rpc-test), chai v4 (ESM constraint), mocha ^8
+- 133 passing, 0 failing, 20 pending (legacy skipped unit tests — harmless)
+- Hermes changes reverted cleanly; test/README.md written to industry standard
+- Caveman skill created and wired into CLAUDE.md from JuliusBrussee/caveman
+- Next session: mock bq_* data tests using Z's v3-metadata-data-structures SQL sample
