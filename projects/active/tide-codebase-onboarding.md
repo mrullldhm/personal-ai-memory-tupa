@@ -5,15 +5,33 @@
 - **Type**: Onboarding / Documentation
 - **Period**: 2026-04-06 - Active
 - **Tech Stack**: Hermes (Express/Pug) + mnemonic-http-rpc (TypeScript/Express) + MongoDB + BigQuery + Redis
-- **Completion**: 55%
-- **Duration**: ~255 min
+- **Completion**: 72%
+- **Duration**: ~390 min
 
 ## Current Status
-- **Last Session**: 2026-04-09 - Functional test suite for mnemonic-http-rpc
-- **Next Steps**: Mock bq_* data tests using Z's v3-metadata-data-structures SQL sample. Create `development` branch for `hermes` and `pdfgenerator` (still pending).
+- **Last Session**: 2026-04-10 - Export Excel API standardization (bq_export.ts)
+- **Next Steps**: Confirm /api/v1/bq_export live after server restart. Test all 3 export types (summary, daily, hourly).
 - **Known Issues**: AWS ECR credentials needed for full Docker setup — use Option B (pnpm dev) instead.
 
 ## Session History (Last 5)
+
+### 2026-04-10 - Export Excel API standardization
+- **Focus**: Standardize export BQ calls through dedicated bq_export.ts controller (Z's direction)
+- **Outcome**: bq_export.ts created in mnemonic, 3 hermesBQ functions added, hermes export.js updated. Two commits pushed.
+- **Learned**: Export skips prepareBQExecution (no analytics table prep needed). Route auto-registered via glob.
+- **Time Spent**: ~45 min
+
+### 2026-04-10 - Export parallelization planning (no code changes)
+- **Focus**: Understanding Z's lazy load direction + planning parallel branch queries for export endpoints
+- **Outcome**: Full architectural clarity — sequential for...of → Promise.all(branches.map(...)). Same pattern as bq_dashboard.ts, different axis. Z changed instructions → new session needed, no code written.
+- **Learned**: Export /all/summary and /all/daily both need parallelization. /location/hourly untouched (single branch). Promise.all is the right pattern — bq_dashboard already proves it works in production.
+- **Time Spent**: ~30 min
+
+### 2026-04-10 - BQ mock tests + test suite restructure
+- **Focus**: Mocked BigQuery functional tests + isolate unit tests from pnpm test
+- **Outcome**: 66 passing, 0 pending. bq_dashboard/storetraffic/engagement/summary all tested with sinon mocks. README updated to industry standard. Pushed `5b87c31` to development.
+- **Learned**: `createAndPopulateAnalyticsTables` must be stubbed (called via `prepareBQExecution`). `bq_summary` returns single object not array.
+- **Time Spent**: ~60 min
 
 ### 2026-04-09 - Functional test suite for mnemonic-http-rpc
 - **Focus**: Set up full functional API test coverage for all v1 + v2 endpoints
@@ -85,4 +103,4 @@
 - **Key Config**: Backend API Key = `mnemonic-http-rpc-dev-secret-api-key`
 
 ---
-**Last Updated**: 2026-04-09 (session 14) | **Position**: #1/10 Active
+**Last Updated**: 2026-04-10 (session 17) | **Position**: #1/10 Active

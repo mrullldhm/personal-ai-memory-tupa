@@ -7,7 +7,6 @@
 |-------|---------|---------|
 | `save-memory` | "save", "save memory", "save progress" | Persist insights to memory files |
 | `manage-project` | "new/load/save/list project" | LRU project tracking (10 slots) |
-| `auto-commit` | "commit", "save changes", post-task (Vigilant) | Structured git commits |
 | `save-diary` | "save diary", "diary entry" | Daily session documentation |
 
 ## Adding New Skills

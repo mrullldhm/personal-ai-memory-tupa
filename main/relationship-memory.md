@@ -41,25 +41,28 @@
 
 ## Session History
 
-**Sessions 1-12 (2026-04-06/09)** — Setup through export deep dive
-- Tupa named + memory system installed. Dev workflow: `docker compose up -d database cache` + `pnpm run dev`. Mongo: `mongorestore` with `database-dump-dev`.
-- Git Flow: Main→Development→Feature. Amirul pushes to `development`; Z reviews PRs to `main`. BigQuery: `emerald.analytics_daily` (aggregated) vs `emerald.analytics_hourly` (granular). Export uses single SQL per type; `tsc --watch` doesn't copy `.sql` — copy manually. Origin = `row.origin`, Branch = `branch.l` from MongoDB (confirmed by Z).
+**Sessions 1-13 (2026-04-06/09)** — Setup through token optimisation
+- Tupa named + memory system installed. Dev workflow, Git Flow, BQ schema established. Export SQL manual copy rule. Caveman skill installed, memory restructured.
 
-**Session 13 (2026-04-09)** — Token optimisation & memory restructure
-- Installed caveman compression skill — compressed all prose files in repo (~18% savings)
-- Restructured relationship-memory.md — stripped dead template filler, condensed old sessions
-- Concern: `.original.md` backup files (35+) may cancel compression gains — deleted
+**Sessions 14-15 (2026-04-09)** — Test suite + skill naming fixes
+- Full functional test suite: 133 passing. Skill folders renamed to lowercase-kebab. Commit workflow: show steps only, no git commands.
 
-**Session 14 (2026-04-09)** — Functional testing for mnemonic-http-rpc
-- Set up full functional test suite: ping, org, user, campaign, common_visit, hermes_*, bq_*, v2 login
-- Test DB isolation via setup.js (mnemonic-http-rpc-test), chai v4 (ESM constraint), mocha ^8
-- 133 passing, 0 failing, 20 pending (legacy skipped unit tests — harmless)
-- Hermes changes reverted cleanly; test/README.md written to industry standard
-- Caveman skill created and wired into CLAUDE.md from JuliusBrussee/caveman
-- Next session: mock bq_* data tests using Z's v3-metadata-data-structures SQL sample
+**Session 16 (2026-04-10)** — BQ mock tests + test suite restructure
+- Added mocked BigQuery functional tests for bq_dashboard, storetraffic, engagement, summary
+- Created test/helpers/bq-mock.js (sinon stubs on hermes-bq module exports)
+- Created test/fixtures/bq-responses.js *Processed shapes + analyticsDaily/analyticsHourly raw rows
+- Created test/functional/v1/bq_connection.test.js (module load checks)
+- Separated unit tests from pnpm test — unit tests now pnpm test:unit only (had 20 pending legacy skipped)
+- Updated test/README.md to industry standard
+- Pushed to development branch. 66 passing, 0 pending
+- One-time git push permission granted for this session only
 
-**Session 15 (2026-04-09)** — Skill naming fix + workflow clarification
-- All Feature/ skill folders renamed to lowercase-kebab (Ubuntu case-sensitive)
-- post-mortem-system + session-briefing-system SKILL.md missing frontmatter — added
-- Rule: folder name must exactly match `name` field in SKILL.md frontmatter, both lowercase-kebab
-- On "commit" or "push": show manual workflow only, do not run git commands
+**Session 17 (2026-04-10)** — Export parallelization planning (no code changes)
+- Reviewed all BQ workflows, planned for...of → Promise.all. Z changed direction → no code written.
+
+**Session 18 (2026-04-10)** — Standardize Export Excel to bq_dashboard/bq_summary pattern
+- Z's new direction: route export through dedicated /api/v1/bq_export instead of /bigquery directly
+- Created mnemonic: bq_export.ts (follows bq_summary structure, uses validateBQRequest, createBQCacheWrapper)
+- Added hermes-bq.ts: getExportSummary / getExportDaily / getExportHourly (call bigQuery.newQuery with export SQLs)
+- Updated hermes export.js: 3 axios calls changed from /bigquery → /bq_export with exportType param
+- Route auto-registered via glob — no index.ts change needed. SQLs unchanged. excels.js unchanged.
