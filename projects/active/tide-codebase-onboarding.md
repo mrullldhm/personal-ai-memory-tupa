@@ -9,11 +9,17 @@
 - **Duration**: ~390 min
 
 ## Current Status
-- **Last Session**: 2026-04-13 - Remove legacy JS files from mnemonic-http-rpc
-- **Next Steps**: Await Z's next direction. Codebase now TypeScript-only in src/.
-- **Known Issues**: AWS ECR credentials needed for full Docker setup — use Option B (pnpm dev) instead.
+- **Last Session**: 2026-04-13 - Remove AWS ECR dependency from Docker setup
+- **Next Steps**: Commit docker changes. Await Z's next direction.
+- **Known Issues**: None.
 
 ## Session History (Last 5)
+
+### 2026-04-13 - Remove AWS ECR dependency from Docker setup
+- **Focus**: Z assigned task to make Docker run without AWS ECR credentials
+- **Outcome**: docker-compose.yml now builds from local Dockerfile. .env.docker created for Docker-specific vars. auth/.gitkeep added. README + CODEBASE-GUIDE + MNEMONIC-GUIDE updated.
+- **Learned**: localhost:27017 and database:27017 both hit same Docker container via port forwarding — same data visible from both contexts
+- **Time Spent**: ~45 min
 
 ### 2026-04-13 - Remove legacy JS files (TypeScript migration cleanup)
 - **Focus**: Z requested JS file removal from src/ — audited all files, planned cleanup, executed deletions
@@ -109,4 +115,4 @@
 - **Key Config**: Backend API Key = `mnemonic-http-rpc-dev-secret-api-key`
 
 ---
-**Last Updated**: 2026-04-13 (session 20) | **Position**: #1/10 Active
+**Last Updated**: 2026-04-13 (session 21) | **Position**: #1/10 Active

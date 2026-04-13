@@ -60,3 +60,7 @@
 - Audited all src JS files: verified none loaded at runtime (glob runs from dist/), all excluded from tsconfig, all have TS counterparts
 - Deleted ~80 JS files from src/ + test_bak directory — codebase now TypeScript-only
 - "Ultrathink" = signal for deep careful analysis before acting. Amirul runs destructive ops manually.
+
+**Session 21 (2026-04-13)** — Remove AWS ECR dependency from Docker setup
+- Replaced ECR image pull with local Dockerfile build in docker-compose.yml. Added .env.docker for Docker-specific env vars (separate from .env for pnpm dev). Added auth/.gitkeep to track dir in git. Fixed stray /bt in .env. Updated README, CODEBASE-GUIDE, MNEMONIC-GUIDE.
+- Amirul likes understanding data persistence and system behaviour — asked why Docker login worked without schema setup. Caveman + Ultrathink pattern consistent.
