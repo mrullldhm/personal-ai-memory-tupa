@@ -5,7 +5,7 @@
 
 | Pos | Project | Last Updated | Status |
 |-----|---------|--------------|--------|
-| #1 | [TIDE Codebase Onboarding](active/tide-codebase-onboarding.md) | 2026-04-10 | Active |
+| #1 | [TIDE Codebase Onboarding](active/tide-codebase-onboarding.md) | 2026-04-13 | Active |
 
 ## Archived Projects (0)
 

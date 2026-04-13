@@ -47,22 +47,16 @@
 **Sessions 14-15 (2026-04-09)** — Test suite + skill naming fixes
 - Full functional test suite: 133 passing. Skill folders renamed to lowercase-kebab. Commit workflow: show steps only, no git commands.
 
-**Session 16 (2026-04-10)** — BQ mock tests + test suite restructure
-- Added mocked BigQuery functional tests for bq_dashboard, storetraffic, engagement, summary
-- Created test/helpers/bq-mock.js (sinon stubs on hermes-bq module exports)
-- Created test/fixtures/bq-responses.js *Processed shapes + analyticsDaily/analyticsHourly raw rows
-- Created test/functional/v1/bq_connection.test.js (module load checks)
-- Separated unit tests from pnpm test — unit tests now pnpm test:unit only (had 20 pending legacy skipped)
-- Updated test/README.md to industry standard
-- Pushed to development branch. 66 passing, 0 pending
-- One-time git push permission granted for this session only
+**Sessions 16-18 (2026-04-10)** — BQ mock tests, export planning, export API standardization
+- Built mocked BQ test suite (66 passing). Standardized export through bq_export.ts. Two commits pushed.
 
-**Session 17 (2026-04-10)** — Export parallelization planning (no code changes)
-- Reviewed all BQ workflows, planned for...of → Promise.all. Z changed direction → no code written.
+**Session 19 (2026-04-13)** — Expand BQ functional test suite (Z's extra testing request)
+- Option A: deeper value/type assertions for bq_dashboard, storetraffic, engagement, summary (66→75)
+- Option C: edge case tests — future startDate early exit, invalid cache param (75→80)
+- Option B: new endpoint coverage — bq_heatmap + bq_export (summary/daily/hourly) (80→100)
+- Key insight: bq_summary early exit returns {} not [] — different from all other BQ endpoints
 
-**Session 18 (2026-04-10)** — Standardize Export Excel to bq_dashboard/bq_summary pattern
-- Z's new direction: route export through dedicated /api/v1/bq_export instead of /bigquery directly
-- Created mnemonic: bq_export.ts (follows bq_summary structure, uses validateBQRequest, createBQCacheWrapper)
-- Added hermes-bq.ts: getExportSummary / getExportDaily / getExportHourly (call bigQuery.newQuery with export SQLs)
-- Updated hermes export.js: 3 axios calls changed from /bigquery → /bq_export with exportType param
-- Route auto-registered via glob — no index.ts change needed. SQLs unchanged. excels.js unchanged.
+**Session 20 (2026-04-13)** — Remove legacy JS files from mnemonic-http-rpc
+- Audited all src JS files: verified none loaded at runtime (glob runs from dist/), all excluded from tsconfig, all have TS counterparts
+- Deleted ~80 JS files from src/ + test_bak directory — codebase now TypeScript-only
+- "Ultrathink" = signal for deep careful analysis before acting. Amirul runs destructive ops manually.

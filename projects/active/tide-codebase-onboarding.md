@@ -9,11 +9,23 @@
 - **Duration**: ~390 min
 
 ## Current Status
-- **Last Session**: 2026-04-10 - Export Excel API standardization (bq_export.ts)
-- **Next Steps**: Confirm /api/v1/bq_export live after server restart. Test all 3 export types (summary, daily, hourly).
+- **Last Session**: 2026-04-13 - Remove legacy JS files from mnemonic-http-rpc
+- **Next Steps**: Await Z's next direction. Codebase now TypeScript-only in src/.
 - **Known Issues**: AWS ECR credentials needed for full Docker setup — use Option B (pnpm dev) instead.
 
 ## Session History (Last 5)
+
+### 2026-04-13 - Remove legacy JS files (TypeScript migration cleanup)
+- **Focus**: Z requested JS file removal from src/ — audited all files, planned cleanup, executed deletions
+- **Outcome**: ~80 legacy JS files removed from src/ + test_bak deleted. Codebase now TypeScript-only.
+- **Learned**: App runs entirely from dist/ — src JS files were never loaded or compiled (tsconfig excludes them)
+- **Time Spent**: ~30 min
+
+### 2026-04-13 - BQ functional test suite expansion
+- **Focus**: Z requested extra testing for more insight — covered A (deeper assertions), C (edge cases), B (new endpoints)
+- **Outcome**: 66 → 100 passing. bq_heatmap and bq_export (summary/daily/hourly) fully covered. New: bq_export_heatmap.test.js
+- **Learned**: bq_summary early exit returns `{}` not `[]` — behavioral difference from all other BQ endpoints
+- **Time Spent**: ~60 min
 
 ### 2026-04-10 - Export Excel API standardization
 - **Focus**: Standardize export BQ calls through dedicated bq_export.ts controller (Z's direction)
@@ -23,27 +35,21 @@
 
 ### 2026-04-10 - Export parallelization planning (no code changes)
 - **Focus**: Understanding Z's lazy load direction + planning parallel branch queries for export endpoints
-- **Outcome**: Full architectural clarity — sequential for...of → Promise.all(branches.map(...)). Same pattern as bq_dashboard.ts, different axis. Z changed instructions → new session needed, no code written.
-- **Learned**: Export /all/summary and /all/daily both need parallelization. /location/hourly untouched (single branch). Promise.all is the right pattern — bq_dashboard already proves it works in production.
+- **Outcome**: Z changed direction → no code written.
+- **Learned**: Promise.all is the right pattern — bq_dashboard already proves it works in production.
 - **Time Spent**: ~30 min
 
 ### 2026-04-10 - BQ mock tests + test suite restructure
 - **Focus**: Mocked BigQuery functional tests + isolate unit tests from pnpm test
-- **Outcome**: 66 passing, 0 pending. bq_dashboard/storetraffic/engagement/summary all tested with sinon mocks. README updated to industry standard. Pushed `5b87c31` to development.
-- **Learned**: `createAndPopulateAnalyticsTables` must be stubbed (called via `prepareBQExecution`). `bq_summary` returns single object not array.
+- **Outcome**: 66 passing, 0 pending. bq_dashboard/storetraffic/engagement/summary all tested with sinon mocks.
+- **Learned**: `createAndPopulateAnalyticsTables` must be stubbed. `bq_summary` returns single object not array.
 - **Time Spent**: ~60 min
 
 ### 2026-04-09 - Functional test suite for mnemonic-http-rpc
 - **Focus**: Set up full functional API test coverage for all v1 + v2 endpoints
 - **Outcome**: 133 passing, 0 failing, 20 pending. Test DB isolated (mnemonic-http-rpc-test). Pushed to development branch.
-- **Learned**: chai v6 = ESM-only, must use v4. bq_* missing params → 200 early exit not 400. validateKeySync → plain Error → 500.
+- **Learned**: chai v6 = ESM-only, must use v4. bq_* missing params → 200 early exit not 400.
 - **Time Spent**: ~60 min
-
-### 2026-04-09 - Excel export origin/branch data flow
-- **Focus**: How branch name/code flows through export pipeline
-- **Outcome**: Traced `branch.o` (MongoDB) → `analytics_daily.origin` (BigQuery) → `row.origin` (CSV). Export correct. No code changes — verified with Z.
-- **Learned**: `analytics_daily.origin` format varies by org — zone codes (`sunway.ALL`) or hardware sensor IDs (`E4956E444856`). Either way, `branch.o` always matches.
-- **Time Spent**: ~15 min
 
 ### 2026-04-09 - Auto-commit skill format fix
 - **Focus**: Tupa system fix (no code work)
@@ -103,4 +109,4 @@
 - **Key Config**: Backend API Key = `mnemonic-http-rpc-dev-secret-api-key`
 
 ---
-**Last Updated**: 2026-04-10 (session 17) | **Position**: #1/10 Active
+**Last Updated**: 2026-04-13 (session 20) | **Position**: #1/10 Active

@@ -95,6 +95,21 @@ Everything else develops naturally through conversations.
 
 ## 📋 Optional Components (Load On-Demand)
 
+### library
+*Auto-triggers when: saving to the library, loading from the library, searching for existing knowledge, installing pre-made items*
+- Library path: `library/`
+- Sections: architecture, component, database, diagram, integration, security, theme, workflow
+- Format templates: `library/formats/`
+- Commit chain: auto-commits after save (if Auto-Commit installed)
+
+**Commands:**
+```
+"save library"    → Search for duplicates, then save knowledge entry
+"load library"    → Search and load a knowledge entry
+"search library"  → Search library without saving
+"install item [name]" → Install a pre-made item from library-items/ catalog
+```
+
 ### Memory Recall
 *Auto-triggers: "do you remember", "recall", "when did we", etc.*
 - [Echo Memory Recall](./Feature/Echo-Memory-Recall/) - Search past sessions

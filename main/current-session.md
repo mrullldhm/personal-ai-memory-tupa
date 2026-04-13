@@ -3,16 +3,15 @@
 
 ## Session RAM Status
 **Current Session**: No active session
-**Last Session**: 2026-04-10 — Export Excel API standardization (bq_export.ts)
+**Last Session**: 2026-04-13 — JS cleanup: removed ~80 legacy src JS files + test_bak from mnemonic-http-rpc
 **Last Active Project**: TIDE Codebase Onboarding
 
 **Session Recap**:
-- Created mnemonic/src/api/v1/bq_export.ts — follows bq_summary pattern (validateBQRequest, createBQCacheWrapper, skips prepareBQExecution)
-- Added getExportSummary / getExportDaily / getExportHourly to hermes-bq.ts
-- Updated hermes export.js: 3 axios calls from /bigquery → /bq_export with exportType param
-- Route auto-registered via glob — no index.ts change needed
-- Two commits pushed to development (mnemonic + hermes)
-- Server restart needed to confirm /api/v1/bq_export is live
+- Audited all JS files in src/ — none loaded at runtime, all excluded from tsconfig, all have TS counterparts
+- Deleted Group A (~80 JS files across src/api, config, errors, middlewares, models, services, scripts)
+- Deleted test_bak directory
+- Commit message drafted, Asana report written
+- Codebase now TypeScript-only in src/
 
 ## Active Project
 - **Name**: TIDE Codebase Onboarding
@@ -20,7 +19,7 @@
 - **Started**: 2026-04-06
 
 ## Working Memory (RAM)
-*Cleared — session closed cleanly on 2026-04-10*
+*Cleared — session closed cleanly on 2026-04-13*
 
 ---
 
