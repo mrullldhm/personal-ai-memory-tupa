@@ -50,11 +50,7 @@
 **Sessions 16-18 (2026-04-10)** — BQ mock tests, export planning, export API standardization
 - Built mocked BQ test suite (66 passing). Standardized export through bq_export.ts. Two commits pushed.
 
-**Session 19 (2026-04-13)** — Expand BQ functional test suite (Z's extra testing request)
-- Option A: deeper value/type assertions for bq_dashboard, storetraffic, engagement, summary (66→75)
-- Option C: edge case tests — future startDate early exit, invalid cache param (75→80)
-- Option B: new endpoint coverage — bq_heatmap + bq_export (summary/daily/hourly) (80→100)
-- Key insight: bq_summary early exit returns {} not [] — different from all other BQ endpoints
+**Session 19 (2026-04-13)** — BQ test suite 66→100: deeper assertions (A), edge cases (C), new endpoints bq_heatmap + bq_export (B). bq_summary early exit returns {} not [].
 
 **Session 20 (2026-04-13)** — Remove legacy JS files from mnemonic-http-rpc
 - Audited all src JS files: verified none loaded at runtime (glob runs from dist/), all excluded from tsconfig, all have TS counterparts
@@ -64,3 +60,8 @@
 **Session 21 (2026-04-13)** — Remove AWS ECR dependency from Docker setup
 - Replaced ECR image pull with local Dockerfile build in docker-compose.yml. Added .env.docker for Docker-specific env vars (separate from .env for pnpm dev). Added auth/.gitkeep to track dir in git. Fixed stray /bt in .env. Updated README, CODEBASE-GUIDE, MNEMONIC-GUIDE.
 - Amirul likes understanding data persistence and system behaviour — asked why Docker login worked without schema setup. Caveman + Ultrathink pattern consistent.
+
+**Session 22 (2026-04-14)** — Correct docker setup: gitignored dev docker-compose
+- Discovered session 21 docker commit was wrong — Z wanted dev-only gitignored setup, not committed to repo.
+- Reverted 90975f0. Created docker-compose-example.yml (ECR reference, committed) + docker-compose.yml (local build, gitignored). Updated .gitignore + README.md.
+- Tupa missed "done" end-of-session protocol — must always trigger on "done" keyword regardless of conversation context.

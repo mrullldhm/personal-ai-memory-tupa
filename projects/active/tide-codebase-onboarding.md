@@ -9,11 +9,17 @@
 - **Duration**: ~390 min
 
 ## Current Status
-- **Last Session**: 2026-04-13 - Remove AWS ECR dependency from Docker setup
-- **Next Steps**: Commit docker changes. Await Z's next direction.
+- **Last Session**: 2026-04-14 - Correct docker setup: gitignored dev docker-compose
+- **Next Steps**: Await Z's next direction.
 - **Known Issues**: None.
 
 ## Session History (Last 5)
+
+### 2026-04-14 - Correct docker setup: gitignored dev docker-compose
+- **Focus**: Z wanted dev-only gitignored docker-compose — yesterday's approach committed it to repo by mistake
+- **Outcome**: Reverted 90975f0. docker-compose-example.yml (ECR, committed). docker-compose.yml (local build, gitignored). .gitignore + README.md updated.
+- **Learned**: Always clarify Z's intent before committing docker/config changes — "set up docker" ≠ "commit docker setup"
+- **Time Spent**: ~30 min
 
 ### 2026-04-13 - Remove AWS ECR dependency from Docker setup
 - **Focus**: Z assigned task to make Docker run without AWS ECR credentials
@@ -115,4 +121,4 @@
 - **Key Config**: Backend API Key = `mnemonic-http-rpc-dev-secret-api-key`
 
 ---
-**Last Updated**: 2026-04-13 (session 21) | **Position**: #1/10 Active
+**Last Updated**: 2026-04-14 (session 22) | **Position**: #1/10 Active
