@@ -67,3 +67,13 @@
 **Session 23 (2026-04-15)** — Hourly Spreadsheet export + radio buttons on hermes export page
 - Replaced 2 checkboxes with 4 radio buttons (PDF Report, Summary Spreadsheet, Daily Spreadsheet, Hourly Spreadsheet). Branch Location dropdown now conditionally shows only under PDF radio via `toggle(this.value === 'pdf')`.
 - Z writes code, Tupa reviews and teaches why. Z caught naming issue (Excel → Spreadsheet). Tupa caught ë typo, duplicate row bug. Z wants to learn deeply, not be spoon-fed.
+
+**Session 24 (2026-04-16)** — Remove Summary Spreadsheet from export feature
+- Removed summary export end-to-end: radio button, actionMap entry, /all/summary route, excels helpers, bq_export.ts branch, getExportSummary(), export-summary.sql, tests + fixtures.
+- Tupa taught removal methodology: trace feature top-to-bottom, delete bottom-up, grep-verify after. Caught stale `exportType: 'summary'` hiding in auth test — reinforced "never assume manual removal is complete without grep."
+- Z learns by doing: implements himself, Tupa reviews. 96 tests passing.
+
+**Session 25 (2026-04-16)** — Hourly export: all locations + bug fixes
+- Changed hourly CSV from single-branch to all-branches (mirrors daily pattern). Renamed Branch→Location in daily CSV header. Fixed silent bug: row.returning_ truncated → row.returning_count.
+- Z implemented himself, made 5 bugs: truncated property, branches.o vs branch.o (loop var), respondse typo, Math.ceil vs Math.floor, _hourly filename suffix. Tupa caught all 5.
+- Teaching: trace data SQL alias → processor, loop variable discipline, typo grep check, Math.floor vs ceil for HHmm. Z fixed all correctly second attempt.

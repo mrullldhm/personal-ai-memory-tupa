@@ -5,15 +5,27 @@
 - **Type**: Onboarding / Documentation
 - **Period**: 2026-04-06 - Active
 - **Tech Stack**: Hermes (Express/Pug) + mnemonic-http-rpc (TypeScript/Express) + MongoDB + BigQuery + Redis
-- **Completion**: 75%
-- **Duration**: ~435 min
+- **Completion**: 78%
+- **Duration**: ~485 min
 
 ## Current Status
-- **Last Session**: 2026-04-15 - Hourly Spreadsheet export + radio buttons on hermes export page
+- **Last Session**: 2026-04-16 - Hourly export all locations + bug fixes
 - **Next Steps**: Await Z's next direction.
 - **Known Issues**: None.
 
 ## Session History (Last 5)
+
+### 2026-04-16 - Hourly export all locations + bug fixes
+- **Focus**: Change hourly CSV from single-branch to all-branches. Rename Branch→Location in daily CSV. Fix silent row.returning_count bug.
+- **Outcome**: Route renamed /all/hourly. filterBranches loop added. 5 bugs caught + fixed (truncated prop, wrong loop var, typo, Math.ceil, _hourly suffix). Tests green. Committed.
+- **Learned**: Loop variable discipline (branch vs branches). SQL alias → processor field name must match exactly. `|| 0` fallbacks can silently hide field name mismatches.
+- **Time Spent**: ~50 min
+
+### 2026-04-16 - Remove Summary Spreadsheet from export feature
+- **Focus**: Remove summary export option end-to-end — Z's direction, Z implements, Tupa teaches
+- **Outcome**: Radio button, actionMap entry, /all/summary route, excels helpers, bq_export.ts branch, getExportSummary(), export-summary.sql, tests + fixtures all removed. 96 tests passing.
+- **Learned**: Feature removal = trace end-to-end, delete bottom-up. Grep after manual removal — caught stale `exportType: 'summary'` in auth test. Dead comments are as dangerous as dead code.
+- **Time Spent**: ~40 min
 
 ### 2026-04-15 - Hourly Spreadsheet export + radio buttons on hermes export page
 - **Focus**: Z assigned adding hourly export option; Z wanted to learn, not just copy-paste
@@ -127,4 +139,4 @@
 - **Key Config**: Backend API Key = `mnemonic-http-rpc-dev-secret-api-key`
 
 ---
-**Last Updated**: 2026-04-15 (session 23) | **Position**: #1/10 Active
+**Last Updated**: 2026-04-16 (session 25) | **Position**: #1/10 Active
