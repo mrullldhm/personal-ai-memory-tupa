@@ -5,15 +5,21 @@
 - **Type**: Onboarding / Documentation
 - **Period**: 2026-04-06 - Active
 - **Tech Stack**: Hermes (Express/Pug) + mnemonic-http-rpc (TypeScript/Express) + MongoDB + BigQuery + Redis
-- **Completion**: 72%
-- **Duration**: ~390 min
+- **Completion**: 75%
+- **Duration**: ~435 min
 
 ## Current Status
-- **Last Session**: 2026-04-14 - Correct docker setup: gitignored dev docker-compose
+- **Last Session**: 2026-04-15 - Hourly Spreadsheet export + radio buttons on hermes export page
 - **Next Steps**: Await Z's next direction.
 - **Known Issues**: None.
 
 ## Session History (Last 5)
+
+### 2026-04-15 - Hourly Spreadsheet export + radio buttons on hermes export page
+- **Focus**: Z assigned adding hourly export option; Z wanted to learn, not just copy-paste
+- **Outcome**: Replaced 2 checkboxes with 4 radio buttons. Branch Location toggles under PDF radio only. No backend changes needed — route already existed.
+- **Learned**: Z implements then asks for review. Silent bugs (ë typo) are dangerous — no error thrown. Teach the why, not just the what.
+- **Time Spent**: ~45 min
 
 ### 2026-04-14 - Correct docker setup: gitignored dev docker-compose
 - **Focus**: Z wanted dev-only gitignored docker-compose — yesterday's approach committed it to repo by mistake
@@ -121,4 +127,4 @@
 - **Key Config**: Backend API Key = `mnemonic-http-rpc-dev-secret-api-key`
 
 ---
-**Last Updated**: 2026-04-14 (session 22) | **Position**: #1/10 Active
+**Last Updated**: 2026-04-15 (session 23) | **Position**: #1/10 Active

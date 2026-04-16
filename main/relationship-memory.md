@@ -53,9 +53,7 @@
 **Session 19 (2026-04-13)** — BQ test suite 66→100: deeper assertions (A), edge cases (C), new endpoints bq_heatmap + bq_export (B). bq_summary early exit returns {} not [].
 
 **Session 20 (2026-04-13)** — Remove legacy JS files from mnemonic-http-rpc
-- Audited all src JS files: verified none loaded at runtime (glob runs from dist/), all excluded from tsconfig, all have TS counterparts
-- Deleted ~80 JS files from src/ + test_bak directory — codebase now TypeScript-only
-- "Ultrathink" = signal for deep careful analysis before acting. Amirul runs destructive ops manually.
+- Deleted ~80 legacy JS files from src/ + test_bak. Codebase now TypeScript-only. "Ultrathink" = deep careful analysis signal; Amirul runs destructive ops manually.
 
 **Session 21 (2026-04-13)** — Remove AWS ECR dependency from Docker setup
 - Replaced ECR image pull with local Dockerfile build in docker-compose.yml. Added .env.docker for Docker-specific env vars (separate from .env for pnpm dev). Added auth/.gitkeep to track dir in git. Fixed stray /bt in .env. Updated README, CODEBASE-GUIDE, MNEMONIC-GUIDE.
@@ -65,3 +63,7 @@
 - Discovered session 21 docker commit was wrong — Z wanted dev-only gitignored setup, not committed to repo.
 - Reverted 90975f0. Created docker-compose-example.yml (ECR reference, committed) + docker-compose.yml (local build, gitignored). Updated .gitignore + README.md.
 - Tupa missed "done" end-of-session protocol — must always trigger on "done" keyword regardless of conversation context.
+
+**Session 23 (2026-04-15)** — Hourly Spreadsheet export + radio buttons on hermes export page
+- Replaced 2 checkboxes with 4 radio buttons (PDF Report, Summary Spreadsheet, Daily Spreadsheet, Hourly Spreadsheet). Branch Location dropdown now conditionally shows only under PDF radio via `toggle(this.value === 'pdf')`.
+- Z writes code, Tupa reviews and teaches why. Z caught naming issue (Excel → Spreadsheet). Tupa caught ë typo, duplicate row bug. Z wants to learn deeply, not be spoon-fed.
