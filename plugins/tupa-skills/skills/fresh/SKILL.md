@@ -31,13 +31,23 @@ Sessions beyond the last 3 full sessions must be condensed:
 - Keep: what was done, what was decided, what was learned
 - Remove: narrative, padding, obvious context
 
-### Step 4: Report
+### Step 4: Compress
+After cleanup, apply caveman compression to both files:
+- Drop articles (the, a, an)
+- Drop filler phrases (I will, Let me, As you know)
+- Use fragments over full sentences
+- Keep nouns, verbs, all facts and rules intact
+- Code blocks stay normal — prose only
+- Rewrite file in-place (overwrite, no backup)
+
+### Step 5: Report
 Output a summary:
 ```
 Fresh complete.
 identity-core.md: [lines before] → [lines after]
 relationship-memory.md: [lines before] → [lines after]
 Sessions condensed: [N]
+Compression: applied
 ```
 
 ## Mandatory Rules
@@ -47,3 +57,4 @@ Sessions condensed: [N]
 
 ## Level History
 - **Lv.1** — Base: Deep memory cleanup on command.
+- **Lv.2** — Auto-compress after cleanup (caveman format, token reduction).

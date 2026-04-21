@@ -5,15 +5,61 @@
 - **Type**: Onboarding / Documentation
 - **Period**: 2026-04-06 - Active
 - **Tech Stack**: Hermes (Express/Pug) + mnemonic-http-rpc (TypeScript/Express) + MongoDB + BigQuery + Redis
-- **Completion**: 78%
-- **Duration**: ~485 min
+- **Completion**: 82%
+- **Duration**: ~510 min
 
 ## Current Status
-- **Last Session**: 2026-04-16 - Hourly export all locations + bug fixes
-- **Next Steps**: Await Z's next direction.
-- **Known Issues**: None.
+- **Last Session**: 2026-04-21 - excels.js → csv.js rename (Session 37)
+- **Next Steps**: Commits ready (2 commits — session 36 Z feedback + session 37 rename). Check if more Z feedback items remain.
+- **Known Issues**: `user.reportBranches` (Branch Selection UI) not wired into emailer.js — Branch Selection is a dead field for subscription emails.
 
 ## Session History (Last 5)
+
+### 2026-04-21 - excels.js → csv.js rename (Session 37)
+- **Focus**: Rename helper file to accurately reflect CSV (not Excel) output
+- **Outcome**: Option A closed. Renamed `excels.js` → `csv.js`. Updated barrel (index.js), export.js, emailer.js, HERMES-GUIDE.md, CLAUDE.md. All tests passed.
+- **Files changed**: `hermes/app/helpers/csv.js`, `hermes/app/helpers/index.js`, `hermes/app/controllers/export.js`, `hermes/reports/emailer.js`, `HERMES-GUIDE.md`, `hermes/CLAUDE.md`
+- **Time Spent**: ~20 min
+
+### 2026-04-21 - Report Subscription testing + CSV date range bug fix (Session 35)
+- **Focus**: Teach how to test emailer end-to-end + fix CSV date range bug
+- **Outcome**: Correct run command documented (`cd hermes && LOG_LEVEL=debug node -r dotenv/config reports/emailer.js`). Fixed CSV date normalization: `csvStart`/`csvEnd` added to emailer.js using same logic as generator.js. Weekly Apr 13–19, monthly Mar 1–31. Z approved. 3 more Z feedback items next session.
+- **Files changed**: `hermes/reports/emailer.js`
+- **Time Spent**: ~45 min
+
+### 2026-04-21 - Report Subscription A-to-Z + CSV Origin/Location fix (Session 34)
+- **Focus**: Full explanation of Report Subscription system + fix Origin/Location column data source
+- **Outcome**: Delivered complete A-to-Z walkthrough (account UI → MongoDB → emailer → generator → mailer → inbox). Fixed Origin column in `processDailyV2` + `processHourlyV2`: was reading `row.origin` (BigQuery response), now uses `branch.o` from org config. Discovered Branch Selection (`user.reportBranches`) is not wired into emailer.js — CSV always sends all branches regardless.
+- **Files changed**: `hermes/app/helpers/excels.js`, `hermes/reports/emailer.js`
+- **Time Spent**: ~25 min
+
+### 2026-04-20 - Graphify removed (Session 33)
+- **Focus**: Audit and remove graphify from workflow
+- **Outcome**: Confirmed graphify not useful — vendor JS (jquery/d3/c3) drowned app nodes. Removed graphify-out/, CLAUDE.md RAG section, done-protocol step, skill folder. rtk confirmed working (87% savings).
+- **Time Spent**: ~15 min
+
+### 2026-04-20 - Graphify maintenance (Session 32)
+- **Focus**: Complete interrupted graphify run on tide-analytics codebase
+- **Outcome**: Graph already built (13,369 nodes, 40,120 edges). Manifest saved (4,399 files). Temp files cleaned. No re-extraction needed — no code changes since 2026-04-17.
+- **Time Spent**: ~15 min
+
+### 2026-04-20 - CSV subscription vs export branch filter bug
+- **Focus**: Origin/Location show codes in subscription CSV but correct names in export CSV
+- **Outcome**: Root cause confirmed — emailer uses all `org.b` (59 branches for Sunway Pyramid) while export filters by `user.reportBranches`. `reportBranches` exists in MongoDB but not in Mongoose schema → stripped by `toObject()`. Option B applied: `csvBranches` lifted before generator call in emailer.js. Fixed 5 bugs in Z's manual attempt. Option A scoped (2-line schema fix) but paused — Amirul wants to understand export flow + BQ/Mongo relationship first.
+- **Learned**: Fields in MongoDB not in Mongoose schema are silently stripped by `toObject()`. Real DB dump (36 orgs) confirmed Sunway Pyramid: 16/59 branches in reportBranches. Z's LocationSchema suggestion was wrong — reportBranches is `[String]` not full branch objects.
+- **Time Spent**: ~90 min
+
+### 2026-04-17 - Report subscription: PDF + daily CSV + hourly CSV
+- **Focus**: Extend emailer.js to attach daily + hourly CSV alongside PDF in scheduled report emails
+- **Outcome**: generateCsvContent() added to emailer.js. Reuses excels.js helpers + /bq_export. In-memory CSVs (no temp files, no new file). Z implemented, 6 bugs caught + fixed over 2 review rounds. 401 fixed: PDF_API_KEY / AUTH_TOKEN tokens matched in hermes + pdfgenerator .env.
+- **Learned**: Always check both sides of a service-to-service auth flow. In-memory `{filename, content}` nodemailer attachments need no cleanup. dot vs comma is a silent killer.
+- **Time Spent**: ~60 min
+
+### 2026-04-17 - PDF export feature debug + .env setup
+- **Focus**: PDF export not working — no output, no browser error
+- **Outcome**: Created hermes `.env` with `PDF_URL=http://localhost:3003/pdf` + `PDF_API_KEY=your_auth_token_here`. Both needed — pdfgenerator has gitignored `.env` with `AUTH_TOKEN=your_auth_token_here` active.
+- **Learned**: Always `ls -la <service>/.env*` on ALL services before reasoning about env var defaults. Gitignored files are invisible to grep/glob.
+- **Time Spent**: ~30 min
 
 ### 2026-04-16 - Hourly export all locations + bug fixes
 - **Focus**: Change hourly CSV from single-branch to all-branches. Rename Branch→Location in daily CSV. Fix silent row.returning_count bug.
@@ -139,4 +185,4 @@
 - **Key Config**: Backend API Key = `mnemonic-http-rpc-dev-secret-api-key`
 
 ---
-**Last Updated**: 2026-04-16 (session 25) | **Position**: #1/10 Active
+**Last Updated**: 2026-04-21 (session 37) | **Position**: #1/10 Active

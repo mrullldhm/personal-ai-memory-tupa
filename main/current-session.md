@@ -3,24 +3,21 @@
 
 ## Session RAM Status
 **Current Session**: No active session
-**Last Session**: 2026-04-16 — Hourly export all locations + bug fixes
+**Last Session**: 2026-04-21 — excels.js → csv.js rename (Session 37)
 **Last Active Project**: TIDE Codebase Onboarding
 
 **Session Recap**:
-- Changed hourly CSV export from single-branch to all-branches (mirrors /all/daily pattern)
-- Renamed Branch→Location in daily CSV header for consistency
-- Fixed silent bug: `row.returning_` → `row.returning_count` in processHourlyV2
-- Route renamed: /location/hourly → /all/hourly. actionMap updated in export.js (view)
-- Z implemented, made 5 bugs (truncated prop, wrong loop var, typo, Math.ceil, _hourly suffix) — caught and fixed all
-- 96 mnemonic tests passing. Committed + pushed hermes.
+- Option A closed (no OrganizationSchema change needed)
+- Renamed `excels.js` → `csv.js`: file, barrel (index.js), export.js, emailer.js, HERMES-GUIDE.md, CLAUDE.md
+- All tests passed (browser export + emailer manual run)
+- Commits ready: session 36 Z feedback + session 37 rename (2 separate commits, Amirul does manually)
 
-## Active Project
-- **Name**: TIDE Codebase Onboarding
-- **File**: projects/active/tide-codebase-onboarding.md
-- **Started**: 2026-04-06
+## Active Projects
+- **TIDE Codebase Onboarding** — projects/active/tide-codebase-onboarding.md
+- **LinkedIn Content Creator** — projects/active/linkedin-content.md
 
 ## Working Memory (RAM)
-*Cleared — session closed cleanly on 2026-04-16*
+*Cleared — session closed cleanly on 2026-04-21*
 
 ---
 
